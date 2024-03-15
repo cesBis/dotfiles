@@ -1,0 +1,20 @@
+# set command line bindings for bash, R, and others that depend on readline
+#   see varients of `apt-cache rdepends libreadline`
+# https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html
+
+set editing-mode vi
+
+set show-mode-in-prompt on
+# change cursor type by mode https://wiki.archlinux.org/title/readline#Different_cursor_shapes_for_each_mode
+set vi-ins-mode-string \1\e[6 q\2
+set vi-cmd-mode-string \1\e[2 q\2
+
+# Keymaps for nav mode
+set keymap vi-move
+
+C-L: clear-screen
+
+# Keymaps for insert mode
+set keymap vi-insert
+
+C-L: clear-screen

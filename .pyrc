@@ -1,0 +1,9 @@
+#!/usr/bin/python
+# only run on startup if `PYTHONSTARTUP=$HOME/.pyrc` is defined
+
+import sys
+
+# https://stackoverflow.com/a/53794913
+# https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797#color-codes
+sys.ps1='\x01\x1b[1;49;35m\x02>>>\x01\x1b[0m\x02 '
+sys.ps2='\x01\x1b[1;49;35m\x02...\x01\x1b[0m\x02 '
