@@ -4,6 +4,6 @@ ln -s .tmux.conf ~
 ln -s .inputrc ~
 
 # neovim
-curl -Lo /usr/local/nvim https://github.com/neovim/neovim/releases/download/v0.9.5/nvim.appimage
-chmod 555 /usr/local/nvim
+curl -Lo /usr/local/bin/nvim https://github.com/neovim/neovim/releases/download/v0.9.5/nvim.appimage
+chmod 555 /usr/local/bin/nvim
 ln -s .config/nvim ~/.config
