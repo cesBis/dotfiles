@@ -1,7 +1,7 @@
 #!/bin/sh
 
-ln -s .tmux.conf ~
-ln -s .inputrc ~
+cp .tmux.conf ~
+cp .inputrc ~
 
 # neovim
 curl -Lo /usr/local/bin/nvim https://github.com/neovim/neovim/releases/download/v0.9.5/nvim.appimage
