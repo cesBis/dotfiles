@@ -8,6 +8,7 @@ export ZPLUG_HOME=$HOME/.local/share/zplug
 
 alias lv='ls -hlsA'
 alias la='ls -A'
+alias bat='batcat' # see `apt show bat` and/or https://github.com/sharkdp/bat?tab=readme-ov-file#on-ubuntu-using-apt
 
 export EDITOR=nvim
 export VISUAL=nvim
