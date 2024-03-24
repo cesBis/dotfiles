@@ -1,12 +1,16 @@
 #!/bin/sh
 
+sudo apt-get update
+
 cp .tmux.conf ~
 cp .inputrc ~
 cp -r .config ~
 
-# neovim
-sudo apt-get update
-sudo apt-get install -y fuse # appimage dependency
+# neovim and other IDE tools
 mkdir -p ~/.local/bin
 curl -Lo ~/.local/bin/nvim https://github.com/neovim/neovim/releases/download/v0.9.5/nvim.appimage
 chmod 777 ~/.local/bin/nvim
+## setup repo with more recent nodejs
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+## fuse is for running appimages, nodejs is for coc nvim extension, ranger is a file browser
+sudo apt-get install -y fuse nodejs ranger

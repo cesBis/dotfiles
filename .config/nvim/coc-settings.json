@@ -1,0 +1,4 @@
+{
+    "suggest.noselect": true,
+    "r.lsp.args": ["--vanilla"]
+}
