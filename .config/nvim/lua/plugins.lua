@@ -21,6 +21,7 @@ require("lazy").setup({
     {'ap/vim-css-color'},
     {'windwp/nvim-autopairs', config = function() require("nvim-autopairs").setup() end},
     {'nvim-lualine/lualine.nvim', dependencies = {'kyazdani42/nvim-web-devicons'}},
+    {'tpope/vim-fugitive'},
     {'neoclide/coc.nvim', branch = 'release'}
 })
 -- https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#install-extensions
