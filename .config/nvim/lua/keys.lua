@@ -12,8 +12,6 @@ vim.g.sendtowindow_use_defaults = 0
 keyset('n', '<leader>r', '0<Plug>SendDown$<C-W>jG<C-W>k', opts)
 keyset('x', '<leader>r', '<Plug>SendDownV<C-W>jG<C-W>k', opts)
 
--- <leader>f is default shortcut for ranger
-
 -- tab shortcuts
 keyset('n', '<leader>c', ':tabnew<cr>', opts)
 keyset('n', '<leader>x', ':tabclose<cr>', opts)
@@ -34,3 +32,8 @@ keyset('n', '<leader>l', ':nohl<cr>:echo<cr><Esc>', opts)
 -- wrap text
 keyset('n','<leader>w', ':set wrap<cr>', opts)
 keyset('n','<leader>uw', ':set nowrap<cr>', opts)
+
+-- keys brought on by plugins
+--
+-- <leader>f is default shortcut for ranger.vim
+-- gc for visual mode and motion comments, <int>gcc for commenting int lines from vim-commentary

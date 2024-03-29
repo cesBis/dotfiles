@@ -22,6 +22,7 @@ require("lazy").setup({
     {'windwp/nvim-autopairs', config = function() require("nvim-autopairs").setup() end},
     {'nvim-lualine/lualine.nvim', dependencies = {'kyazdani42/nvim-web-devicons'}},
     {'tpope/vim-fugitive'},
+    {'tpope/vim-commentary'},
     {'neoclide/coc.nvim', branch = 'release'}
 })
 -- https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#install-extensions
