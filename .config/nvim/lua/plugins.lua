@@ -23,6 +23,7 @@ require("lazy").setup({
     {'nvim-lualine/lualine.nvim', dependencies = {'kyazdani42/nvim-web-devicons'}},
     {'tpope/vim-fugitive'},
     {'tpope/vim-commentary'},
+    {'tpope/vim-surround'},
     {'neoclide/coc.nvim', branch = 'release'}
 })
 -- https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#install-extensions

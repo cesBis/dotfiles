@@ -9,5 +9,6 @@
   "vim-commentary": { "branch": "master", "commit": "f67e3e67ea516755005e6cccb178bc8439c6d402" },
   "vim-css-color": { "branch": "master", "commit": "faa65935660a4596414fe21d57e2110faeb9e869" },
   "vim-fugitive": { "branch": "master", "commit": "a83135b55b018a891e0803199c3d418010a404d8" },
-  "vim-sendtowindow": { "branch": "master", "commit": "abbaaa55e728167bee548fcec4d42c665fc7a042" }
+  "vim-sendtowindow": { "branch": "master", "commit": "abbaaa55e728167bee548fcec4d42c665fc7a042" },
+  "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" }
 }

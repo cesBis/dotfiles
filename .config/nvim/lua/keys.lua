@@ -37,3 +37,4 @@ keyset('n','<leader>uw', ':set nowrap<cr>', opts)
 --
 -- <leader>f is default shortcut for ranger.vim
 -- gc for visual mode and motion comments, <int>gcc for commenting int lines from vim-commentary
+-- cs: change surrounding | ds: delete surrounding | ys: yes new surrounding | and more! see https://github.com/tpope/vim-surround
