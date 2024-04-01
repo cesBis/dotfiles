@@ -28,3 +28,4 @@ require("lazy").setup({
 })
 -- https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#install-extensions
 vim.g.coc_global_extensions = {'coc-json', 'coc-r-lsp', 'coc-jedi'}
+-- see more language servers at https://github.com/neoclide/coc.nvim/wiki/Language-servers

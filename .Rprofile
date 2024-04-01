@@ -1,5 +1,5 @@
 
-Sys.setenv("R_LIBS_USER" = paste0("~/.local/lib/R/library"))
+Sys.setenv("R_LIBS_USER" = "~/.local/lib/R/library")
 .libPaths(Sys.getenv("R_LIBS_USER"), include.site = FALSE)
 options(
     repos = c(POSIT ="https://packagemanager.posit.co/cran/__linux__/jammy/2022-03-09"),
