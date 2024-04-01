@@ -33,6 +33,14 @@ keyset('n', '<leader>l', ':nohl<cr>:echo<cr><Esc>', opts)
 keyset('n','<leader>w', ':set wrap<cr>', opts)
 keyset('n','<leader>uw', ':set nowrap<cr>', opts)
 
+-- github copilot
+-- from :help copilot
+vim.keymap.set('i', '<C-a>', 'copilot#Accept("\\<CR>")', {
+  expr = true,
+  replace_keycodes = false
+})
+vim.g.copilot_no_tab_map = true
+
 -- keys brought on by plugins
 --
 -- <leader>f is default shortcut for ranger.vim

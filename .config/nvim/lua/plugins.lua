@@ -24,6 +24,7 @@ require("lazy").setup({
     {'tpope/vim-fugitive'},
     {'tpope/vim-commentary'},
     {'tpope/vim-surround'},
+    {'github/copilot.vim'},
     {'neoclide/coc.nvim', branch = 'release'}
 })
 -- https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#install-extensions
