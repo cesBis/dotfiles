@@ -35,7 +35,8 @@ keyset('n','<leader>uw', ':set nowrap<cr>', opts)
 
 -- github copilot
 -- from :help copilot
-vim.keymap.set('i', '<C-a>', 'copilot#Accept("\\<CR>")', {
+-- accept on `->` arrow key, like my shell autocomplete
+vim.keymap.set('i', '<Right>', 'copilot#Accept("\\<CR>")', {
   expr = true,
   replace_keycodes = false
 })
