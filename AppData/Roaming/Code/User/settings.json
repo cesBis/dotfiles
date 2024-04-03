@@ -1,0 +1,51 @@
+{
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": false,
+    "r.lsp.diagnostics": false,
+    "workbench.startupEditor": "none",
+    "r.session.emulateRStudioAPI": false,
+    "r.workspaceViewer.showObjectSize": true,
+    "terminal.integrated.tabs.enabled": false,
+    "jupyter.askForKernelRestart": false,
+    "[SAS]": {
+        "files.encoding": "windows1252",
+        "editor.tabSize": 4,
+		"editor.insertSpaces": true,
+		"editor.detectIndentation": false
+    },
+    "workbench.colorTheme": "Default High Contrast",
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "python.linting.pylintCategorySeverity.refactor": "Error",
+    "r.helpPanel.enableSyntaxHighlighting": false,
+    "r.libPaths": [
+        "C:/Program Files/R/R-4.1.0/library",
+        "C:/Users/Conner.Smith/R/win-library/4.1"
+    ],
+    "workbench.localHistory.enabled": false,
+    "terminal.integrated.shellIntegration.history": 0,
+    "terminal.integrated.enablePersistentSessions": false,
+    "terminal.integrated.persistentSessionReviveProcess": "never",
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.smoothScrolling": true,
+    "workbench.layoutControl.enabled": false,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "r.alwaysUseActiveTerminal": true,
+    "editor.lineNumbers": "relative",
+    "[search-result]": {
+        "editor.lineNumbers": "relative"
+    },
+    "editor.fontFamily": "\"Hack NF\", Consolas, monospace",
+    "editor.cursorBlinking": "solid",
+    "window.zoomLevel": 1,
+    "python.analysis.extraPaths": [],
+    "extensions.ignoreRecommendations": true,
+    "extensions.autoUpdate": false,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "zenMode.showTabs": "none",
+    "zenMode.hideLineNumbers": false
+}
