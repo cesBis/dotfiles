@@ -1,29 +1,11 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
     {
-        "key": "ctrl+r ctrl+w",
-        "command": "workspaceViewer.focus"
-    },
-    {
         "key": "ctrl+shift+f10",
         "command": "workbench.action.terminal.relaunch"
     },
     {
-        "key": "ctrl+alt+m",
-        "command": "workbench.action.toggleMaximizedPanel"
-    },
-    {
-        "key": "ctrl+enter",
-        "command": "python.execSelectionInTerminal",
-        "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
-    },
-    {
         "key": "shift+enter",
-        "command": "-python.execSelectionInTerminal",
-        "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
-    },
-    {
-        "key": "ctrl+enter",
         "command": "PowerShell.RunSelection",
         "when": "editorTextFocus && editorLangId == 'powershell'"
     },
