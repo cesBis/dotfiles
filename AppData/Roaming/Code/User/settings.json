@@ -47,5 +47,6 @@
         "asvetliakov.vscode-neovim": 1
     },
     "zenMode.showTabs": "none",
-    "zenMode.hideLineNumbers": false
+    "zenMode.hideLineNumbers": false,
+    "editor.tabCompletion": "on"
 }
