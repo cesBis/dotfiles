@@ -15,33 +15,8 @@
         "when": "editorTextFocus && editorLangId == 'powershell'"
     },
     {
-        "key": "ctrl+down",
-        "command": "-selectNextSuggestion",
-        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
-    },
-    {
         "key": "tab",
         "command": "selectNextSuggestion",
-        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
-    },
-    {
-        "key": "down",
-        "command": "-selectNextSuggestion",
-        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
-    },
-    {
-        "key": "ctrl+n",
-        "command": "-selectNextSuggestion",
-        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-    },
-    {
-        "key": "ctrl+p",
-        "command": "-selectPrevSuggestion",
-        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-    },
-    {
-        "key": "ctrl+up",
-        "command": "-selectPrevSuggestion",
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
     },
     {
@@ -50,44 +25,14 @@
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
     },
     {
-        "key": "up",
-        "command": "-selectPrevSuggestion",
-        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
-    },
-    {
         "key": "right",
         "command": "editor.action.inlineEdit.accept",
         "when": "inlineEditVisible"
     },
     {
-        "key": "tab",
-        "command": "-editor.action.inlineEdit.accept",
-        "when": "cursorAtInlineEdit && inlineEditVisible && !editorReadonly"
-    },
-    {
-        "key": "tab",
-        "command": "-editor.action.inlineSuggest.commit",
-        "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
-    },
-    {
         "key": "right",
         "command": "editor.action.inlineSuggest.commit",
         "when": "inlineSuggestionVisible"
-    },
-    {
-        "key": "right",
-        "command": "-vscode-neovim.send",
-        "when": "neovim.init && neovim.recording || editorTextFocus && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
-    },
-    {
-        "key": "left",
-        "command": "-vscode-neovim.send",
-        "when": "neovim.init && neovim.recording || editorTextFocus && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
-    },
-    {
-        "key": "left",
-        "command": "-cursorLeft",
-        "when": "textInputFocus"
     },
     {
         "key": "right",
@@ -100,7 +45,13 @@
         "when": "!inlineEditVisible && !inlineSuggestionVisible"
     },
     {
-        "key": "left",
-        "command": "cursorLeft"
+        "key": "tab",
+        "command": "-editor.action.inlineEdit.accept",
+        "when": "cursorAtInlineEdit && inlineEditVisible && !editorReadonly"
+    },
+    {
+        "key": "tab",
+        "command": "-editor.action.inlineSuggest.commit",
+        "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
     }
 ]
