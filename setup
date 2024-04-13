@@ -7,13 +7,11 @@ cp .inputrc ~
 cp -r .config ~
 
 # neovim and other IDE tools
-mkdir -p ~/.local/bin
-pushd ~/.local
 curl -LO https://github.com/neovim/neovim/releases/download/v0.9.5/nvim.appimage
 chmod 777 nvim.appimage
 ./nvim.appimage --appimage-extract
-popd
-ln -s ~/.local/squashfs-root/AppRun ~/.local/bin/nvim
+mkdir -p ~/.local/bin
+ln -s `pwd`/squashfs-root/AppRun ~/.local/bin/nvim
 ## setup repo with more recent nodejs
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 ## nodejs is for coc nvim extension, ranger is a file browser, pip is for nvim python plugins like jedi lsp
