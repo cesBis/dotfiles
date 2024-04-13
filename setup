@@ -17,4 +17,3 @@ curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 ## nodejs is for coc nvim extension, ranger is a file browser, pip is for nvim python plugins like jedi lsp
 sudo apt-get install -y nodejs ranger python3-pip
 pip install --user pynvim
-R --vanilla -e "if (!require(languageserver)) install.packages('languageserver')"
