@@ -12,8 +12,6 @@ vim.g.sendtowindow_use_defaults = 0
 keyset('n', '<leader>r', '0<Plug>SendDown$<C-W>jG<C-W>k', opts)
 keyset('x', '<leader>r', '<Plug>SendDownV<C-W>jG<C-W>k', opts)
 
--- <leader>f is default shortcut for ranger
-
 -- tab shortcuts
 keyset('n', '<leader>c', ':tabnew<cr>', opts)
 keyset('n', '<leader>x', ':tabclose<cr>', opts)
@@ -34,3 +32,18 @@ keyset('n', '<leader>l', ':nohl<cr>:echo<cr><Esc>', opts)
 -- wrap text
 keyset('n','<leader>w', ':set wrap<cr>', opts)
 keyset('n','<leader>uw', ':set nowrap<cr>', opts)
+
+-- github copilot
+-- from :help copilot
+-- accept on `->` arrow key, like my shell autocomplete
+vim.keymap.set('i', '<Right>', 'copilot#Accept("\\<CR>")', {
+  expr = true,
+  replace_keycodes = false
+})
+vim.g.copilot_no_tab_map = true
+
+-- keys brought on by plugins
+--
+-- <leader>f is default shortcut for ranger.vim
+-- gc for visual mode and motion comments, <int>gcc for commenting int lines from vim-commentary
+-- cs: change surrounding | ds: delete surrounding | ys: yes new surrounding | and more! see https://github.com/tpope/vim-surround
