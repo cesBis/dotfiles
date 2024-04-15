@@ -48,5 +48,7 @@
     },
     "zenMode.showTabs": "none",
     "zenMode.hideLineNumbers": false,
-    "editor.tabCompletion": "on"
+    "editor.tabCompletion": "on",
+    "zenMode.centerLayout": false,
+    "zenMode.restore": false
 }
