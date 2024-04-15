@@ -33,6 +33,9 @@ keyset('n', '<leader>l', ':nohl<cr>:echo<cr><Esc>', opts)
 keyset('n','<leader>w', ':set wrap<cr>', opts)
 keyset('n','<leader>uw', ':set nowrap<cr>', opts)
 
+-- fzf from apt
+keyset('n', '<leader>f', ':FZF<cr>', opts)
+
 -- github copilot
 -- from :help copilot
 -- accept on `->` arrow key, like my shell autocomplete
@@ -44,6 +47,5 @@ vim.g.copilot_no_tab_map = true
 
 -- keys brought on by plugins
 --
--- <leader>f is default shortcut for ranger.vim
 -- gc for visual mode and motion comments, <int>gcc for commenting int lines from vim-commentary
 -- cs: change surrounding | ds: delete surrounding | ys: yes new surrounding | and more! see https://github.com/tpope/vim-surround
