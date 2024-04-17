@@ -50,5 +50,7 @@
     "zenMode.hideLineNumbers": false,
     "editor.tabCompletion": "on",
     "zenMode.centerLayout": false,
-    "zenMode.restore": false
+    "zenMode.restore": false,
+    "workbench.editor.restoreViewState": false,
+    "window.restoreWindows": "none"
 }
