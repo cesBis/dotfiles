@@ -1,19 +1,21 @@
 #!/bin/sh
 
-sudo apt-get update
-
 cp .tmux.conf ~
 cp .inputrc ~
+cp .zshrc ~
 cp -r .config ~
 
-# neovim and other IDE tools
+# neovim
 curl -LO https://github.com/neovim/neovim/releases/download/v0.9.5/nvim.appimage
 chmod 777 nvim.appimage
 ./nvim.appimage --appimage-extract
 mkdir -p ~/.local/bin
 ln -s `pwd`/squashfs-root/AppRun ~/.local/bin/nvim
-## setup repo with more recent nodejs
+
+# setup repo with more recent nodejs
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-## nodejs is for coc nvim extension, ranger is a file browser, pip is for nvim python plugins like jedi lsp
-sudo apt-get install -y nodejs ranger python3-pip
+
+# other packages
+sudo apt-get update
+sudo apt-get install -y nodejs ranger python3-pip fzf
 pip install --user pynvim

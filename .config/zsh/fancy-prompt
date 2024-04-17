@@ -1,0 +1,15 @@
+# from https://salferrarello.com/zsh-git-status-prompt/
+
+autoload -Uz add-zsh-hook vcs_info
+setopt prompt_subst
+
+add-zsh-hook precmd vcs_info
+
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:git:*' formats       '%F{45}[%b]%f'
+zstyle ':vcs_info:git:*' actionformats '%F{45}[%b:%a]%f'
+# ignore dotfile repos, see https://unix.stackexchange.com/a/563964
+zstyle ':vcs_info:git:*:conner' formats "%0.0r"
+zstyle ':vcs_info:git:*:.devbox' formats "%0.0r"
+
+PROMPT='%F{39}[%~]%f${vcs_info_msg_0_}%F{13}>%f '
