@@ -5,8 +5,6 @@ cp .inputrc ~
 cp .zshrc ~
 cp -r .config ~
 
-sudo chsh -s /bin/zsh codespace
-
 # neovim
 curl -LO https://github.com/neovim/neovim/releases/download/v0.9.5/nvim.appimage
 chmod 777 nvim.appimage
