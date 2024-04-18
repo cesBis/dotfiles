@@ -5,7 +5,7 @@ cp .inputrc ~
 cp .zshrc ~
 cp -r .config ~
 
-chsh -s /bin/zsh
+sudo chsh -s /bin/zsh codespace
 
 # neovim
 curl -LO https://github.com/neovim/neovim/releases/download/v0.9.5/nvim.appimage
@@ -19,5 +19,5 @@ curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 
 # other packages
 sudo apt-get update
-sudo apt-get install -y nodejs ranger python3-pip fzf
+sudo apt-get install -y nodejs ranger python3-pip fzf zplug
 pip install --user pynvim
