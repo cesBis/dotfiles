@@ -5,8 +5,6 @@ cp .inputrc ~
 cp .zshrc ~
 cp -r .config ~
 
-sudo chsh "$(id -un)" --shell "/usr/bin/zsh"
-
 # neovim
 curl -LO https://github.com/neovim/neovim/releases/download/v0.9.5/nvim.appimage
 chmod 777 nvim.appimage
@@ -21,3 +19,7 @@ curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 sudo apt-get update
 sudo apt-get install -y nodejs ranger python3-pip fzf zplug
 pip install --user pynvim
+
+# shell setup
+sudo chown -R $(id -un) /usr/local/share/zsh # defaults to owned by UNKOWN:ssh which causes annoying compaudit messages
+sudo chsh "$(id -un)" --shell "/usr/bin/zsh"
