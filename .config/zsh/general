@@ -3,7 +3,7 @@
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=10000
-setopt appendhistory
+setopt share_history
 
 setopt autocd extendedglob
 unsetopt BEEP
