@@ -5,11 +5,11 @@
   "lazy.nvim": { "branch": "main", "commit": "aedcd79811d491b60d0a6577a9c1701063c2a609" },
   "lualine.nvim": { "branch": "master", "commit": "7d131a8d3ba5016229e8a1d08bf8782acea98852" },
   "nvim-autopairs": { "branch": "master", "commit": "096d0baecc34f6c5d8a6dd25851e9d5ad338209b" },
+  "nvim-repl": { "branch": "main", "commit": "ef8952560112a2a3daa90db958a0bd933dbbb994" },
   "nvim-web-devicons": { "branch": "master", "commit": "313d9e7193354c5de7cdb1724f9e2d3f442780b0" },
   "ranger.vim": { "branch": "master", "commit": "91e82debdf566dfaf47df3aef0a5fd823cedf41c" },
   "vim-commentary": { "branch": "master", "commit": "f67e3e67ea516755005e6cccb178bc8439c6d402" },
   "vim-css-color": { "branch": "master", "commit": "faa65935660a4596414fe21d57e2110faeb9e869" },
   "vim-fugitive": { "branch": "master", "commit": "a83135b55b018a891e0803199c3d418010a404d8" },
-  "vim-sendtowindow": { "branch": "master", "commit": "abbaaa55e728167bee548fcec4d42c665fc7a042" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" }
 }
