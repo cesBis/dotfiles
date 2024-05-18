@@ -4,13 +4,12 @@ local keyset = vim.keymap.set
 local opts = {silent = true}
 
 -- start terminal
-keyset('n', '<leader>t', '<cmd>split<cr><C-w>h<cmd>terminal<cr>i', opts)
+keyset('n', '<leader>t', '<cmd>ReplToggle<cr>', opts)
 -- exit terminal with Ctrl+q
 keyset('t', '<C-q>', '<C-\\><C-n>')
 -- send line to terminal. uses vim-sendtowindow and assumes terminal is below
-vim.g.sendtowindow_use_defaults = 0
-keyset('n', '<leader>r', '0<Plug>SendDown$<C-W>jG<C-W>k', opts)
-keyset('x', '<leader>r', '<Plug>SendDownV<C-W>jG<C-W>k', opts)
+keyset('n', '<leader>r', '<Plug>ReplSendLine', opts)
+keyset('x', '<leader>r', '<Plug>ReplSendVisual', opts)
 
 -- tab shortcuts
 keyset('n', '<leader>c', ':tabnew<cr>', opts)
