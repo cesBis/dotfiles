@@ -38,11 +38,9 @@ keyset('n', '<leader>f', ':FZF<cr>', opts)
 
 -- github copilot
 -- from :help copilot
--- accept on `->` arrow key, like my shell autocomplete
-vim.keymap.set('i', '<Right>', 'copilot#Accept("\\<CR>")', {
-  expr = true,
-  replace_keycodes = false
-})
+-- accept on `->` arrow key, like my shell autocomplete, not TAB, that's for coc
+keyset('i', '<Right>', 'copilot#Accept("\\<CR>")', {expr = true,  replace_keycodes = false})
+keyset('i', '<C-Right>', '<Plug>(copilot-accept-word)')
 vim.g.copilot_no_tab_map = true
 
 -- keys brought on by plugins
