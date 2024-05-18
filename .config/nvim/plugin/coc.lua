@@ -1,26 +1,6 @@
-local keyset = vim.keymap.set
-
--- CoCList --
--- see `:h coc-list` and search 'coc-list-link' or 'coc-list-diagnostics'
-
-keyset("n", "Co", ":<C-u>CocList outline<cr>", {silent = true, nowait = true})
-
--- LSP stuff --
--- see `:h coc-lsp`
-
--- Use `[g` and `]g` to navigate diagnostics
--- Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-keyset("n", "[g", "<Plug>(coc-diagnostic-prev)", {silent = true})
-keyset("n", "]g", "<Plug>(coc-diagnostic-next)", {silent = true})
-
--- GoTo code navigation.
-keyset("n", "gd", "<Plug>(coc-definition)", {silent = true})
-
---------------------------------
--- Basics --
---------------------------------
-
 -- eg https://github.com/neoclide/coc.nvim#example-lua-configuration
+
+local keyset = vim.keymap.set
 
 -- Some servers have issues with backup files, see #649.
 vim.opt.backup = false
