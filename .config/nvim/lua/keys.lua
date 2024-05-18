@@ -61,7 +61,6 @@ keyset("n", "gd", "<Plug>(coc-definition)", {silent = true})
 
 -- keys brought on by plugins --------
 --
--- <leader>f is default shortcut for ranger.vim
 -- gc for visual mode and motion comments, <int>gcc for commenting int lines from vim-commentary
 -- cs: change surrounding | ds: delete surrounding | ys: yes new surrounding | and more! see https://github.com/tpope/vim-surround
 -- TAB from ../plugin/coc.lua
