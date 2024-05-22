@@ -1,7 +1,7 @@
 vim.g.repl_split = "bottom"
 
 vim.g["repl_filetype_commands"] = {
-  R = "R --quiet",
+  r = "R --quiet",
   rmd = "R --quiet",
   python = "python"
 }
