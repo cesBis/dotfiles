@@ -32,9 +32,9 @@ vim.cmd [[
 
 -- colors: see https://www.ditig.com/256-colors-cheat-sheet
 vim.cmd [[
-    highlight TabLineFill cterm=NONE ctermbg=Black
-    highlight TabLine cterm=NONE ctermbg=Black
-    highlight TabLineSel cterm=NONE ctermbg=237
+    highlight TabLineFill cterm=NONE ctermbg=237
+    highlight TabLine cterm=NONE ctermbg=237 ctermfg=39
+    highlight TabLineSel cterm=NONE ctermbg=Black ctermfg=13
     highlight CursorLine cterm=NONE ctermbg=237
     highlight VertSplit cterm=NONE
 ]]
