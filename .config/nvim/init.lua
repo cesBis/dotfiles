@@ -1,5 +1,4 @@
 -- neovim configuration
--- example: https://github.com/numToStr/dotfiles/tree/master/neovim/.config/nvim
 -- options: https://neovim.io/doc/user/options.html
 -- lua api: https://neovim.io/doc/user/lua.html
 -- installed via apt
