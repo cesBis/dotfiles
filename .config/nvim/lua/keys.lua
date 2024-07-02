@@ -6,10 +6,10 @@ vim.g.mapleader = ' '
 local keyset = vim.keymap.set
 
 -- tab shortcuts
-keyset('n', '<leader>c', ':tabnew<cr>', {silent = true})
-keyset('n', '<leader>x', ':tabclose<cr>', {silent = true})
-keyset('n', 'K', ':tabn<cr>', {silent = true})
-keyset('n', 'J', ':tabp<cr>', {silent = true})
+keyset('n', '<leader>c', '<cmd>tabnew<cr>')
+keyset('n', '<leader>x', '<cmd>tabclose<cr>')
+keyset('n', 'K', '<cmd>tabn<cr>')
+keyset('n', 'J', '<cmd>tabp<cr>')
 
 -- window shortcuts
 keyset('n', '<leader>-', '<cmd>split<cr>')
@@ -20,26 +20,26 @@ keyset('n', '<C-k>', '<C-w>k')
 keyset('n', '<C-l>', '<C-w>l')
 
 -- clear highlight
-keyset('n', '<leader>l', ':nohl<cr>:echo<cr><Esc>', {silent = true})
+keyset('n', '<leader>l', '<cmd>nohl<cr><cmd>echo<cr>')
 
 -- wrap text
-keyset('n','<leader>w', ':set wrap<cr>', {silent = true})
-keyset('n','<leader>uw', ':set nowrap<cr>', {silent = true})
+keyset('n','<leader>w', '<cmd>set wrap<cr>')
+keyset('n','<leader>uw', '<cmd>set nowrap<cr>')
 
 -------------------------------------
 -- Plugin Keys
 -------------------------------------
 
 -- nvim-repl ------------------------
-keyset('n', '<leader>t', '<cmd>ReplToggle<cr>', {silent = true})
-keyset('n', '<leader>r', '<Plug>ReplSendLine', {silent = true})
-keyset('x', '<leader>r', '<Plug>ReplSendVisual', {silent = true})
+keyset('n', '<leader>t', '<cmd>ReplToggle<cr>')
+keyset('n', '<leader>r', '<Plug>ReplSendLine')
+keyset('x', '<leader>r', '<Plug>ReplSendVisual')
 -- exit terminal with Ctrl+q
 keyset('t', '<C-q>', '<C-\\><C-n>')
 
 -- fzf ------------------------------
-keyset('n', '<leader>f', ":lua fzf_on('git ls-files')<cr>", {silent = true})
-keyset('n', '<leader>F', ":lua fzf_on('find . -type f | cut -c 3- | sort')<cr>", {silent = true})
+keyset('n', '<leader>f', function() fzf_on('git ls-files') end)
+keyset('n', '<leader>F', function() fzf_on('find . -type f | cut -c 3- | sort') end)
 
 -- github copilot -------------------
 -- from :help copilot
