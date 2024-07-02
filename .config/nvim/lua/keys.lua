@@ -38,7 +38,8 @@ keyset('x', '<leader>r', '<Plug>ReplSendVisual', {silent = true})
 keyset('t', '<C-q>', '<C-\\><C-n>')
 
 -- fzf ------------------------------
-keyset('n', '<leader>f', ':FZF<cr>', {silent = true})
+keyset('n', '<leader>f', ":lua fzf_on('git ls-files')<cr>", {silent = true})
+keyset('n', '<leader>F', ":lua fzf_on('find . -type f | cut -c 3-')<cr>", {silent = true})
 
 -- github copilot -------------------
 -- from :help copilot
