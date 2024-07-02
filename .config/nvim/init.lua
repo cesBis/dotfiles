@@ -4,9 +4,9 @@
 -- installed via apt
 
 require('general')
-require('keys')
-require('macros')
 require('plugins')
+require('macros')
+require('keys')
 
 -- for clipboard, using win32yank from windows neovim installation seems to work
 --   `ln -s /mnt/c/Users/Conner.Smith/programs/nvim-win64/bin/win32yank.exe /usr/local/bin/win32yank.exe`
