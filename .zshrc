@@ -5,7 +5,7 @@ export ZPLUG_HOME=$HOME/.local/share/zplug
 . $ZSH_CONF/general
 . $ZSH_CONF/vim-mode
 . $ZSH_CONF/zplug
-. $ZSH_CONF/fzf
+. $ZSH_CONF/fzf-completion
 
 alias lv='ls -hlsA'
 alias la='ls -A'
