@@ -12,7 +12,7 @@ chmod 777 nvim.appimage
 mkdir -p ~/.local/bin
 ln -s `pwd`/squashfs-root/AppRun ~/.local/bin/nvim
 
-# setup repo with more recent nodejs
+# coc.nvim requires nodejs >= 16.18, docker.io/rocker/shiny:4.3.3 builds on ubuntu jammy, which has nodejs 12.22
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 
 # other packages
