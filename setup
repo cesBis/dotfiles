@@ -17,7 +17,7 @@ curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 
 # other packages
 sudo apt-get update
-sudo apt-get install -y nodejs ranger python3-pip fzf zplug
+sudo apt-get install -y nodejs ranger python3-pip zplug
 pip install --user pynvim
 
 # shell setup

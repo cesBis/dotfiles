@@ -17,7 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 -- https://github.com/folke/lazy.nvim#-plugin-spec
 require("lazy").setup({
     {"pappasam/nvim-repl"},
-    {'junegunn/fzf', tag = '0.29.0'},-- fzf from apt
+    {'junegunn/fzf'},
     {'ap/vim-css-color'},
     {'windwp/nvim-autopairs', config = function() require("nvim-autopairs").setup() end},
     {'nvim-lualine/lualine.nvim', dependencies = {'kyazdani42/nvim-web-devicons'}},
