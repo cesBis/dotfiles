@@ -38,8 +38,8 @@ keyset('x', '<leader>r', '<Plug>ReplSendVisual')
 keyset('t', '<C-q>', '<C-\\><C-n>')
 
 -- fzf ------------------------------
-keyset('n', '<leader>f', function() fzf_on('git ls-files') end)
-keyset('n', '<leader>F', function() fzf_on('find . -type f | cut -c 3- | sort') end)
+keyset('n', '<leader>f', fzf_git_ls_files)
+keyset('n', '<leader>F', fzf_all_files)
 
 -- github copilot -------------------
 -- from :help copilot
