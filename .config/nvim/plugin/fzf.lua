@@ -20,7 +20,7 @@ end
 
 fzf_grep_in_git_files = function(term)
   fzf({
-    source = "git grep " .. term .. " | cut -d : -f 1 | sort | uniq",
+    source = "git grep '" .. term .. "' | cut -d : -f 1 | sort | uniq",
     options = "--preview 'grep --line-number --color=always \"" .. term .. "\" {}'",
     sink = "e",
   })
