@@ -18,10 +18,11 @@ fzf_all_files = function()
   })
 end
 
-fzf_find_in_git_files = function(term)
+fzf_grep_in_git_files = function(term)
   fzf({
-    sink = "e",
     source = "git grep " .. term .. " | cut -d : -f 1 | sort | uniq",
     options = "--preview 'grep --line-number \"" .. term .. "\" {}'",
+    sink = "e",
   })
 end
+vim.api.nvim_create_user_command("FzfGrepInGitFiles", function(opts) fzf_grep_in_git_files(opts.fargs[1]) end, {nargs = 1})
