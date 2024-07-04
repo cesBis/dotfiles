@@ -7,7 +7,6 @@ zplug "hlissner/zsh-autopair"
 zplug "zsh-users/zsh-history-substring-search"
 
 zplug load
-[ `zplug check` ] && zplug install
 
 # these commands are provided by "zsh-users/zsh-history-substring-search"
 bindkey '^[[A' history-substring-search-up
