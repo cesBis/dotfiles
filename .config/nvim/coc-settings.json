@@ -1,4 +1,4 @@
 {
-    "suggest.noselect": true,
-    "r.lsp.use_stdio": true
+  "suggest.noselect": true,
+  "r.lsp.use_stdio": true
 }

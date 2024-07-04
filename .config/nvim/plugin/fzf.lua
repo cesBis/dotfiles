@@ -1,19 +1,28 @@
--- used to keyset fzf with different search lists
+-- https://github.com/junegunn/fzf/blob/master/README-VIM.md
 
--- https://github.com/junegunn/fzf/blob/master/README-VIM.md#fzfwrap
-fzf_spec_default = {
-    options = "--preview 'cat {}'",
-    sink = "e",
-}
+local fzf = function(spec) vim.fn["fzf#run"](vim.fn["fzf#wrap"](spec)) end
 
 fzf_git_ls_files = function()
-    local spec = fzf_spec_default
-    spec["source"] = "git ls-files"
-    vim.fn["fzf#run"](vim.fn["fzf#wrap"](spec))
+  fzf({
+    source = "git ls-files",
+    options = "--preview 'cat {}'",
+    sink = "e",
+  })
 end
 
 fzf_all_files = function()
-    local spec = fzf_spec_default
-    spec["source"] = "find . -type f | cut -c 3- | sort"
-    vim.fn["fzf#run"](vim.fn["fzf#wrap"](spec))
+  fzf({
+    source = "find . -type f | cut -c 3- | sort",
+    options = "--preview 'cat {}'",
+    sink = "e",
+  })
 end
+
+fzf_grep_in_git_files = function(term)
+  fzf({
+    source = "git grep '" .. term .. "' | cut -d : -f 1 | sort | uniq",
+    options = "--preview 'grep --line-number --color=always \"" .. term .. "\" {}'",
+    sink = "e",
+  })
+end
+vim.api.nvim_create_user_command("FzfGrepInGitFiles", function(opts) fzf_grep_in_git_files(opts.fargs[1]) end, {nargs = 1})
