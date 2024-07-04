@@ -23,4 +23,9 @@ pip install --user pynvim
 # shell setup
 sudo chown -R $(id -un) /usr/local/share/zsh # defaults to owned by UNKOWN:ssh which causes annoying compaudit messages
 sudo chsh "$(id -un)" --shell "/usr/bin/zsh"
-zsh -c ". ~/.zshrc; zplug install"
+
+# TODO: how to install plugins in this script?
+# works interactively, but not in script?
+#   zsh -c ". ~/.zshrc; zplug install"
+# untested. might work, but would leave an nvim instance running
+#   nvim --headless
