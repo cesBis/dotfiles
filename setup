@@ -23,4 +23,4 @@ pip install --user pynvim
 # shell setup
 sudo chown -R $(id -un) /usr/local/share/zsh # defaults to owned by UNKOWN:ssh which causes annoying compaudit messages
 sudo chsh "$(id -un)" --shell "/usr/bin/zsh"
-zsh -c "zplug install"
+zsh -c ". ~/.zshrc; zplug install"
