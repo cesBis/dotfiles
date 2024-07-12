@@ -1,4 +1,4 @@
--- eg https://github.com/nvim-lualine/lualine.nvim#default-configuration
+-- https://github.com/nvim-lualine/lualine.nvim#default-configuration
 
 require('lualine').setup {
   options = {
