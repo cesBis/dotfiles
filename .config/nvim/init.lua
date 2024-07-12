@@ -30,7 +30,6 @@ require("lazy").setup({
 -- commands (some plugin dependence)
 -------------------------------------
 
-require('macros')
 require('keys')
 
 -------------------------------------
