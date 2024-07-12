@@ -2,7 +2,7 @@
 -- see https://neovim.io/doc/user/quickref.html#option-list
 -- vim.opt could be helpful for modifying options in functions, as it has methods
 
-vim.cmd.set('splitbelow splitright number relativenumber nowrap mouse=a encoding=utf8 clipboard=unnamedplus,unnamed')
+vim.cmd.set('splitbelow splitright number relativenumber nowrap mouse=a encoding=utf8 clipboard=unnamedplus,unnamed ignorecase smartcase')
 
 -- cursorline for active windows only
 vim.cmd [[
