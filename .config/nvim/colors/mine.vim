@@ -1,5 +1,4 @@
 " cursorline for active windows only
-set cursorline
 autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 
