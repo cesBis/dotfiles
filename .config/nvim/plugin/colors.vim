@@ -1,3 +1,5 @@
+" see :h colorscheme if you're ever compelled to enable switching colorschemes
+
 " cursorline for active windows only
 autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
