@@ -1,8 +1,10 @@
 ---------------------------------------------------------------------------------------------------------
 -- https://neovim.io/doc/user/options.html
 -- https://neovim.io/doc/user/lua.html
--- :h runtimepath
 -- installed via apt
+--
+-- see ./plugin/files, which are automatically sourced after this
+-- see :h runtimepath and :h startup
 --
 -- for clipboard, using win32yank from windows neovim installation seems to work
 --   `ln -s /mnt/c/Users/Conner.Smith/programs/nvim-win64/bin/win32yank.exe /usr/local/bin/win32yank.exe`
