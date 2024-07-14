@@ -3,14 +3,15 @@
 
 require('lualine').setup {
   options = {
+    theme = '16color',
     globalstatus = true,
   },
   sections = {
     lualine_a = {{'filename', path = 1}},
-    lualine_b = {'progress'},
-    lualine_c = {'diagnostics'},
-    lualine_x = {},
-    lualine_y = {'diff', 'branch'},
-    lualine_z = {'filetype', 'encoding', 'fileformat'},
+    lualine_b = {{'diagnostics', colored = false}},
+    lualine_c = {'progress'},
+    lualine_x = {'encoding', 'fileformat', {'filetype', icon_only = true}},
+    lualine_y = {{'diff', colored = false}},
+    lualine_z = {'branch'},
   },
 }
