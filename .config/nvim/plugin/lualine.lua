@@ -1,25 +1,17 @@
--- eg https://github.com/nvim-lualine/lualine.nvim#default-configuration
+-- https://github.com/nvim-lualine/lualine.nvim#default-configuration
+-- only need to be explicit when varying from default
 
 require('lualine').setup {
   options = {
-    icons_enabled = true,
-    theme = 'auto',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
-    always_divide_middle = true,
+    theme = '16color',
     globalstatus = true,
-    refresh = {
-      statusline = 1000,
-      tabline = 1000,
-      winbar = 1000,
-    }
   },
   sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {{'filename', path = 1}},
-    lualine_x = {'encoding', 'fileformat'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
-  }
+    lualine_a = {{'filename', path = 1}},
+    lualine_b = {{'diagnostics', colored = false}},
+    lualine_c = {'progress'},
+    lualine_x = {'encoding', 'fileformat', {'filetype', icon_only = true}},
+    lualine_y = {{'diff', colored = false}},
+    lualine_z = {'branch'},
+  },
 }
