@@ -34,9 +34,11 @@ zstyle ':completion:*' menu select
 compinit
 _comp_options+=(globdots)
 
-for f in ~/.local/share/zsh/completions/*; do
-    source $f
-done
+if [ -d ~/.local/share/zsh/completions ]; then
+  for f in ~/.local/share/zsh/completions/*; do
+      source $f
+  done
+fi
 
 ############################################
 # Miscelaneous (see `man zshoptions`)
