@@ -30,8 +30,8 @@ compinit
 _comp_options+=(globdots)
 
 if [ -d ~/.local/share/zsh/completions ]; then
-  for f in ~/.local/share/zsh/completions/*; do
-      source $f
+  for f in `ls ~/.local/share/zsh/completions`; do
+      source ~/.local/share/zsh/completions/$f
   done
 fi
 
