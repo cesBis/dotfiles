@@ -1,6 +1,7 @@
 # secrets go in ~/.zshenv, which is .gitignored
 
 export EDITOR=nvim
+export LANG=en_US.UTF-8
 
 alias lv='ls -hlsA'
 alias la='ls -A'
