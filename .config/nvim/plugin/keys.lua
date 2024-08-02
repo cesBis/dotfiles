@@ -27,15 +27,17 @@ keyset('n','<leader>w', '<cmd>set wrap<cr>')
 keyset('n','<leader>uw', '<cmd>set nowrap<cr>')
 
 -------------------------------------
--- Plugin Keys
+-- Plugin Related Keys
 -------------------------------------
 
 -- nvim-repl ------------------------
-keyset('n', '<leader>t', '<cmd>ReplToggle<cr>')
-keyset('n', '<leader>r', '<Plug>ReplSendLine')
-keyset('x', '<leader>r', '<Plug>ReplSendVisual')
+keyset('n', '<S-TAB>', '<cmd>ReplToggle<cr>')
+keyset('n', '<TAB>', '<Plug>ReplSendLine')
+keyset('x', '<TAB>', '<Plug>ReplSendVisual')
 -- exit terminal with Ctrl+q
 keyset('t', '<C-q>', '<C-\\><C-n>')
+-- wrap R expression (TODO: see about a lua function that would handle python and R)
+keyset('x', 'E', '$%')
 
 -- fzf ------------------------------
 keyset('n', '<leader>f', fzf_git_ls_files)
