@@ -55,6 +55,10 @@
             "keys": "alt+space"
         },
         {
+            "command": "unbound",
+            "keys": "ctrl+shift+1"
+        },
+        {
             "command": "find",
             "keys": "ctrl+shift+f"
         },
@@ -75,6 +79,14 @@
             {
                 "action": "newTab",
                 "index": 1
+            },
+            "keys": "ctrl+shift+u"
+        },
+        {
+            "command": 
+            {
+                "action": "newTab",
+                "index": 0
             },
             "keys": "ctrl+shift+t"
         }
