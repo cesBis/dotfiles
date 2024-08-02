@@ -1,4 +1,5 @@
 set splitbelow splitright number relativenumber nowrap mouse=a encoding=utf8 clipboard=unnamedplus,unnamed ignorecase smartcase
+set statusline=%-F%=%{&fileencoding}\ \ %{&fileformat}
 
 " cursorline for active windows only
 autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
@@ -9,8 +10,7 @@ set expandtab tabstop=2 shiftwidth=2
 autocmd BufEnter *.py set tabstop=4|set shiftwidth=4
 autocmd BufLeave * set tabstop=2|set shiftwidth=2
 
-" colors etc
-set statusline=%-F%=%{&fileencoding}\ \ %{&fileformat}
+" colors
 highlight statusline cterm=NONE gui=NONE
 highlight TabLineFill cterm=NONE ctermbg=237
 highlight TabLine cterm=NONE ctermbg=237 ctermfg=39
@@ -21,7 +21,7 @@ highlight VertSplit cterm=NONE
 " keys
 let mapleader = " "
 nmap <leader>- <cmd>split<cr>
-nmap <leader>\\ <cmd>vsplit<cr>
+nmap <leader>\ <cmd>vsplit<cr>
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
