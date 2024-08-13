@@ -28,10 +28,12 @@ bindkey '^[[B' history-substring-search-down
 # Completions
 ############################################
 
-autoload -Uz compinit
+# some programs, like `distrobox`, have their own completions
+fpath+=/usr/share/zsh/site-functions
+
+autoload -Uz compinit && compinit
 zmodload zsh/complist
 zstyle ':completion:*' menu select
-compinit
 _comp_options+=(globdots)
 
 if [ -d ~/.local/share/zsh/completions ]; then
