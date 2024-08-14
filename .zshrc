@@ -49,7 +49,7 @@ fi
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=10000
-setopt share_history
+setopt inc_append_history_time hist_ignore_dups extended_history
 
 setopt autocd extendedglob
 unsetopt BEEP
