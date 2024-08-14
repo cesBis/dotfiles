@@ -29,5 +29,6 @@ require("lazy").setup({
   {'tpope/vim-commentary'},
   {'tpope/vim-surround'},
   {'github/copilot.vim'},
+  {'robitx/gp.nvim'},
   {'neoclide/coc.nvim', branch = 'release'}
 })
