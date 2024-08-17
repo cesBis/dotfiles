@@ -10,3 +10,6 @@ require("gp").setup({
   chat_shortcut_stop = {modes = {}, shortcut = ''},
   chat_shortcut_new = {modes = {}, shortcut = ''},
 })
+
+vim.api.nvim_create_user_command("Chatstart", ":GpChatNew tabnew", {})
+vim.api.nvim_create_user_command("Chatreponse", ":GpChatRespond", {})
