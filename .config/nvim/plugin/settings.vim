@@ -1,4 +1,5 @@
 set splitbelow splitright number relativenumber nowrap mouse=a encoding=utf8 clipboard=unnamedplus,unnamed ignorecase smartcase
+let g:netrw_banner=0
 
 " cursorline for active windows only
 autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
