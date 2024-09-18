@@ -18,6 +18,14 @@ fzf_all_files = function()
   })
 end
 
+fzf_all_dirs = function()
+  fzf({
+    source = "find . -path './.git' -prune -o -type d -print | tail +2 | cut -c 3- | sort",
+    options = "--preview 'ls -A {}'",
+    sink = "e",
+  })
+end
+
 fzf_grep_in_git_files = function(term)
   fzf({
     source = "git grep '" .. term .. "' | cut -d : -f 1 | sort | uniq",
