@@ -5,7 +5,7 @@ if vim.v.shell_error == 0 then
     {
       pattern = "*.py",
       callback = function()
-        os.execute("ruff format --quiet")
+        os.execute("ruff format --quiet " .. vim.fn.expand("%"))
         vim.cmd.edit(vim.fn.expand("%"))
       end
     }
