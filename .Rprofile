@@ -10,7 +10,7 @@ if (R.version$version.string == "R version 4.3.3 (2024-02-29)") {
   Sys.setenv("R_LIBS_USER" = "~/.local/lib/R/library")
   .libPaths(Sys.getenv("R_LIBS_USER"), include.site = FALSE)
   options(
-    repos = c(CRAN = "https://p3m.dev/cran/__linux__/noble/2024-04-23"),
+    repos = c(POSIT = "https://p3m.dev/cran/__linux__/noble/2024-04-23"),
     # https://docs.posit.co/rspm/admin/serving-binaries/#binary-user-agents
     HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(), R.version["platform"], R.version["arch"], R.version["os"]))
   )
