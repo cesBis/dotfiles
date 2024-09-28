@@ -5,10 +5,9 @@ let g:netrw_banner=0
 autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 
-" tab characters and spaces: first and last line set default, middle lines set exceptions
+" tab characters: default nvim file type plugins sometimes override these, despite the readme saying they shouldn't
+" see https://github.com/neovim/neovim/blob/v0.9.5/runtime/ftplugin
 set expandtab tabstop=2 shiftwidth=2
-autocmd BufEnter *.py set tabstop=4|set shiftwidth=4
-autocmd BufLeave * set tabstop=2|set shiftwidth=2
 
 " colors: see https://www.ditig.com/256-colors-cheat-sheet
 " see :h colorscheme if you're ever compelled to enable switching colorschemes
