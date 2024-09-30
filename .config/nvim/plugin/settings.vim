@@ -1,4 +1,4 @@
-set splitbelow splitright number relativenumber nowrap mouse=a encoding=utf8 clipboard=unnamedplus,unnamed ignorecase smartcase
+set number relativenumber nowrap ignorecase smartcase clipboard=unnamedplus,unnamed
 let g:netrw_banner=0
 colorscheme quiet
 
