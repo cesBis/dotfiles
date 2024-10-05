@@ -32,7 +32,23 @@ fzf_grep_in_git_files = function(term)
   fzf({
     source = "git grep '" .. term .. "' | cut -d : -f 1 | sort | uniq",
     options = "--preview 'grep --line-number --color=always \"" .. term .. "\" {}'",
-    sink = "e",
+    sink = "EditAndSearch " .. term
   })
 end
-vim.api.nvim_create_user_command("FzfGrepInGitFiles", function(opts) fzf_grep_in_git_files(opts.fargs[1]) end, {nargs = 1})
+
+vim.api.nvim_create_user_command(
+  "EditAndSearch",
+  function(opts)
+    vim.cmd.edit(opts.fargs[#opts.fargs])
+    vim.fn.feedkeys("/" .. opts.fargs[1] .. "\r", "n")
+  end,
+  {nargs = '+'}
+)
+
+vim.api.nvim_create_user_command(
+  "FzfGrepInGitFiles",
+  function(opts)
+    fzf_grep_in_git_files(opts.fargs[1])
+  end,
+  {nargs = 1}
+)
