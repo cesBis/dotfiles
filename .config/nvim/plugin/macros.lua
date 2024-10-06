@@ -3,8 +3,8 @@
 
 local macro = vim.api.nvim_create_user_command
 
-macro("Spellcheck", ":setlocal spell spelllang=en_us", {})
-macro("Nospellcheck", ":setlocal nospell", {})
+macro("Spellcheck1ON", ":setlocal spell spelllang=en_us", {})
+macro("Spellcheck2OFF", ":setlocal nospell", {})
 macro("Help", ":tab help", {nargs=1})
 
 -- :Git from vim-fugitive
