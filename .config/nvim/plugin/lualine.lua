@@ -18,7 +18,7 @@ require('lualine').setup {
       normal = {
         a = { fg = '#00afff', bg = '#303030' },
         b = { fg = '#303030', bg = '#00afff' },
-        c = { fg = '#303030', bg = '#080808' },
+        c = { fg = '#909090', bg = '#080808' },
       },
     }
   },
