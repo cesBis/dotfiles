@@ -1,4 +1,5 @@
 options(
+  help_type='html',
   # https://stackoverflow.com/a/1448823
   # https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797#color-codes
   prompt = '\x01\x1b[1;13;35m\x02>\x01\x1b[0m\x02 ',
