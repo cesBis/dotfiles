@@ -8,4 +8,10 @@ macro("Spellcheck2OFF", ":setlocal nospell", {})
 macro("Help", ":tab help", {nargs=1})
 
 -- :Git from vim-fugitive
-macro("Commit", ":Git add --update | tab Git commit --verbose", {})
+macro("G",
+  function(opts)
+    vim.cmd("tab Git " .. opts.fargs[1])
+  end,
+  {nargs=1}
+)
+macro("Gcommit", ":G commit --all --verbose", {})
