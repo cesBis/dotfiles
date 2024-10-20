@@ -2,6 +2,8 @@ set number relativenumber nowrap ignorecase smartcase clipboard=unnamedplus,unna
 let g:netrw_banner=0
 
 colorscheme quiet
+highlight diffAdded   ctermfg=green
+highlight diffRemoved ctermfg=red
 autocmd ColorSchemePre * highlight clear
 
 " cursorline for active windows only
