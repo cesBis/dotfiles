@@ -5,7 +5,12 @@ local macro = vim.api.nvim_create_user_command
 
 macro("Spellcheck1ON", ":setlocal spell spelllang=en_us", {})
 macro("Spellcheck2OFF", ":setlocal nospell", {})
-macro("Help", ":tab help", {nargs=1})
+macro("Help",
+  function(opts)
+    vim.cmd("tab help " .. opts.fargs[1])
+  end,
+  {nargs=1}
+)
 
 -- :Git from vim-fugitive
 macro("G",
