@@ -1,6 +1,8 @@
 set number relativenumber nowrap ignorecase smartcase clipboard=unnamedplus,unnamed
 let g:netrw_banner=0
+
 colorscheme quiet
+autocmd ColorSchemePre * highlight clear
 
 " cursorline for active windows only
 autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
