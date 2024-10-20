@@ -7,9 +7,9 @@ local keyset = vim.keymap.set
 
 -- tab shortcuts
 keyset('n', '<leader>c', '<cmd>tabnew<cr>')
-keyset('n', '<leader>x', '<cmd>tabclose<cr>')
-keyset('n', 'K', '<cmd>tabn<cr>')
-keyset('n', 'J', '<cmd>tabp<cr>')
+keyset('n', '<leader>x', '<cmd>quit<cr>')
+keyset('n', 'K', '<cmd>tabnext<cr>')
+keyset('n', 'J', '<cmd>tabprevious<cr>')
 
 -- window shortcuts
 keyset('n', '<leader>-', '<cmd>split<cr>')
