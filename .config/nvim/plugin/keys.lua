@@ -53,10 +53,8 @@ keyset('i', '<C-Right>', '<Plug>(copilot-accept-word)')
 vim.g.copilot_no_tab_map = true
 
 -- CoC ------------------------------
-keyset("n", "Co", "<cmd>CocOutline<cr>")
+keyset("n", "<leader>o", "<cmd>CocOutline<cr>")
 -- see `:h coc-lsp`
--- Use `[g` and `]g` to navigate diagnostics
--- Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 keyset("n", "[g", "<Plug>(coc-diagnostic-prev)", {silent = true})
 keyset("n", "]g", "<Plug>(coc-diagnostic-next)", {silent = true})
 -- GoTo code navigation.
