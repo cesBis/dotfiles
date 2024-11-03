@@ -1,7 +1,7 @@
 -- https://github.com/neoclide/coc.nvim#example-lua-configuration
 -- https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#install-extensions
 -- see more language servers at https://github.com/neoclide/coc.nvim/wiki/Language-servers
-vim.g.coc_global_extensions = {'coc-json', 'coc-r-lsp', 'coc-jedi'}
+vim.g.coc_global_extensions = {'coc-json', 'coc-r-lsp', 'coc-jedi', '@yaegassy/coc-marksman'}
 
 local keyset = vim.keymap.set
 
