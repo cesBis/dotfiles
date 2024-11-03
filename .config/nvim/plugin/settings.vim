@@ -1,4 +1,4 @@
-set number relativenumber nowrap ignorecase smartcase clipboard=unnamedplus,unnamed
+set splitright splitbelow number relativenumber nowrap ignorecase smartcase clipboard=unnamedplus,unnamed
 let g:netrw_banner=0
 
 colorscheme quiet
