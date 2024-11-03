@@ -24,7 +24,7 @@ require("lazy").setup({
   {'junegunn/fzf'},
   {'ap/vim-css-color'},
   {'windwp/nvim-autopairs', config = function() require("nvim-autopairs").setup() end},
-  {'nvim-lualine/lualine.nvim', dependencies = {'kyazdani42/nvim-web-devicons'}},
+  {'nvim-lualine/lualine.nvim', dependencies = {'nvim-tree/nvim-web-devicons'}},
   {'tpope/vim-fugitive'},
   {'tpope/vim-commentary'},
   {'tpope/vim-surround'},
