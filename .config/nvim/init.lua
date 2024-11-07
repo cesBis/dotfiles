@@ -26,6 +26,7 @@ require("lazy").setup({
   {'windwp/nvim-autopairs', config = function() require("nvim-autopairs").setup() end},
   {'nvim-lualine/lualine.nvim', dependencies = {'nvim-tree/nvim-web-devicons'}},
   {'tpope/vim-fugitive'},
+  {'tpope/vim-rhubarb', dependencies = {'tpope/vim-fugitive'}},
   {'tpope/vim-commentary'},
   {'tpope/vim-surround'},
   {'github/copilot.vim'},
