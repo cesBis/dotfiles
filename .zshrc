@@ -16,6 +16,7 @@ zplug "hlissner/zsh-autopair"
 zplug "zsh-users/zsh-history-substring-search"
 zplug load
 
+# TODO see about doing this in ./setup because here it slows down shell startup time. 
 if ! zplug check; then
   zplug install
 fi
