@@ -8,8 +8,7 @@ alias la='ls -A'
 alias bat='batcat' # see `apt show bat` and/or https://github.com/sharkdp/bat?tab=readme-ov-file#on-ubuntu-using-apt
 
 export ZPLUG_HOME=$HOME/.local/share/zsh/zplug
-# zplug came from apt
-. /usr/share/zplug/init.zsh
+. $ZPLUG_HOME/init.zsh
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "hlissner/zsh-autopair"

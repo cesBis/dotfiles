@@ -6,7 +6,7 @@ cp .zshrc ~
 cp -r .config ~
 
 sudo apt-get update
-sudo apt-get install -y ranger python3-pip zplug
+sudo apt-get install -y ranger python3-pip
 
 mkdir ~/.local
 
@@ -22,3 +22,5 @@ pip install --user pynvim
 # zsh
 sudo chown -R $(id -un) /usr/local/share/zsh # defaults to owned by UNKOWN:ssh which causes annoying compaudit messages
 sudo chsh "$(id -un)" --shell "/usr/bin/zsh"
+export ZPLUG_HOME=$HOME/.local/share/zsh/zplug # also in .zshrc
+git clone --depth 1 --branch 2.4.2 https://github.com/zplug/zplug $ZPLUG_HOME
