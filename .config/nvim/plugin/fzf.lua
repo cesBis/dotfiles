@@ -6,7 +6,7 @@ local fzf = function(spec) vim.fn["fzf#run"](vim.fn["fzf#wrap"](spec)) end
 
 fzf_files = function()
   fzf({
-    source = "find . -path './.git' -prune -o -path './trash' -prune -o -type f -print | cut -c 3- | sort",
+    source = "find . -path './.git' -prune -o -type f -print | cut -c 3- | sort",
     options = "--preview 'cat {}'",
     sink = "e",
   })
