@@ -4,23 +4,15 @@ vim.cmd.source("/usr/share/doc/fzf/examples/fzf.vim")
 
 local fzf = function(spec) vim.fn["fzf#run"](vim.fn["fzf#wrap"](spec)) end
 
-fzf_git_ls_files = function()
+fzf_files = function()
   fzf({
-    source = "git ls-files",
+    source = "find . -path './.git' -prune -o -path './trash' -prune -o -type f -print | cut -c 3- | sort",
     options = "--preview 'cat {}'",
     sink = "e",
   })
 end
 
-fzf_all_files = function()
-  fzf({
-    source = "find . -type f | cut -c 3- | sort",
-    options = "--preview 'cat {}'",
-    sink = "e",
-  })
-end
-
-fzf_all_dirs = function()
+fzf_dirs = function()
   fzf({
     source = "find . -path './.git' -prune -o -type d -print | tail +2 | cut -c 3- | sort",
     options = "--preview 'ls -A {}'",
