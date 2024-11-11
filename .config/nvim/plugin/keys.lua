@@ -40,9 +40,8 @@ keyset('t', '<C-q>', '<C-\\><C-n>')
 keyset('x', 'E', '$%')
 
 -- fzf ------------------------------
-keyset('n', '<leader>f', fzf_git_ls_files)
-keyset('n', '<leader>F', fzf_all_files)
-keyset('n', '<leader>d', fzf_all_dirs)
+keyset('n', '<leader>f', fzf_files)
+keyset('n', '<leader>d', fzf_dirs)
 keyset('n', '<leader>g', ':FzfGrepInGitFiles ')
 
 -- github copilot -------------------
