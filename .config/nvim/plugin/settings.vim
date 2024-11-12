@@ -1,9 +1,9 @@
-set splitright splitbelow number relativenumber nowrap ignorecase smartcase clipboard=unnamedplus,unnamed
+set splitright splitbelow number relativenumber nowrap ignorecase smartcase clipboard=unnamedplus,unnamed termguicolors
 let g:netrw_banner=0
 
 colorscheme quiet
-highlight diffAdded   ctermfg=green
-highlight diffRemoved ctermfg=red
+highlight diffAdded   guifg=#00ff33
+highlight diffRemoved guifg=#ff0033
 autocmd ColorSchemePre * highlight clear
 
 " cursorline for active windows only
