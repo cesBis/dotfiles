@@ -1,5 +1,4 @@
 set splitright splitbelow number relativenumber nowrap ignorecase smartcase clipboard=unnamedplus,unnamed termguicolors
-let g:netrw_banner=0
 
 colorscheme quiet
 highlight diffAdded   guifg=#00ff33

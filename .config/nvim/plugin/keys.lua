@@ -59,6 +59,10 @@ keyset("n", "]g", "<Plug>(coc-diagnostic-next)", {silent = true})
 -- GoTo code navigation.
 keyset("n", "gd", "<Plug>(coc-definition)", {silent = true})
 
+-- oil ------------------------------
+-- note, oil kills netrw tools like :Explore
+keyset("n", "-", "<cmd>Oil<cr>")
+
 -- keys brought on by plugins --------
 --
 -- gc for visual mode and motion comments, <int>gcc for commenting int lines from vim-commentary
