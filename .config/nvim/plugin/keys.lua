@@ -58,6 +58,9 @@ keyset("n", "[g", "<Plug>(coc-diagnostic-prev)", {silent = true})
 keyset("n", "]g", "<Plug>(coc-diagnostic-next)", {silent = true})
 -- GoTo code navigation.
 keyset("n", "gd", "<Plug>(coc-definition)", {silent = true})
+-- Tab complete
+keyset("i", "<TAB>", [[coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()]], {silent = true, noremap = true, expr = true, replace_keycodes = false})
+keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], {silent = true, noremap = true, expr = true, replace_keycodes = false})
 
 -- oil ------------------------------
 -- note, oil kills netrw tools like :Explore
