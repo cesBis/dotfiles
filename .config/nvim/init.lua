@@ -22,7 +22,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   {"pappasam/nvim-repl"},
   {'junegunn/fzf'},
-  {'ap/vim-css-color'},
   {'windwp/nvim-autopairs', config = function() require("nvim-autopairs").setup() end},
   {'nvim-lualine/lualine.nvim', dependencies = {'nvim-tree/nvim-web-devicons'}},
   {'tpope/vim-fugitive'},
@@ -31,5 +30,6 @@ require("lazy").setup({
   {'tpope/vim-surround'},
   {'github/copilot.vim'},
   {'robitx/gp.nvim'},
-  {'neoclide/coc.nvim', branch = 'release'}
+  {'neoclide/coc.nvim', branch = 'release'},
+  {'uga-rosa/ccc.nvim', config = function() require("ccc").setup({highlighter = { auto_enable = true }}) end},
 })
