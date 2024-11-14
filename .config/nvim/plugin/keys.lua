@@ -68,6 +68,5 @@ keyset("n", "-", "<cmd>Oil<cr>")
 
 -- keys brought on by plugins --------
 --
--- gc for visual mode and motion comments, <int>gcc for commenting int lines from vim-commentary
--- cs: change surrounding | ds: delete surrounding | ys: yes new surrounding | and more! see https://github.com/tpope/vim-surround
--- TAB from plugin/coc.lua
+-- gc for visual mode and motion comments, <int>gcc for commenting int lines, see :help commentary.txt
+-- cs: change surrounding | ds: delete surrounding | ys: yes new surrounding , see :help surround
