@@ -1,8 +1,6 @@
 ---------------------------------------------------------------------------------------------------------
 -- https://neovim.io/doc/user/options.html
 -- https://neovim.io/doc/user/lua.html
--- installed appimage via curl in setup
---
 -- see ./plugin/files, which are automatically sourced after this
 -- see :h runtimepath and :h startup
 ---------------------------------------------------------------------------------------------------------
