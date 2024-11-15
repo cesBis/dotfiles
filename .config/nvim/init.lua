@@ -30,5 +30,5 @@ require("lazy").setup({
   {'robitx/gp.nvim'},
   {'neoclide/coc.nvim', branch = 'release'},
   {'uga-rosa/ccc.nvim', config = function() require("ccc").setup({highlighter = { auto_enable = true }}) end},
-  {'stevearc/oil.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }, config = function() require("oil").setup() end},
+  {'stevearc/oil.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }},
 })
