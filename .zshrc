@@ -5,7 +5,9 @@ export LANG=en_US.UTF-8
 
 alias lv='ls -hlsA'
 alias la='ls -A'
-alias bat='batcat' # see `apt show bat` and/or https://github.com/sharkdp/bat?tab=readme-ov-file#on-ubuntu-using-apt
+
+if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi
+export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive # https://nixos.wiki/wiki/Locales
 
 export ZPLUG_HOME=$HOME/.local/share/zsh/zplug
 . $ZPLUG_HOME/init.zsh
