@@ -7,6 +7,7 @@
 # https://search.nixos.org/packages
         neovim nodejs_18 # coc.nvim and copilot.vim require nodejs
         bat
+        fzf
       ];
     };
   };

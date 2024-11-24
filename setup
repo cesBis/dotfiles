@@ -3,16 +3,21 @@
 cp .tmux.conf ~
 cp .inputrc ~
 cp .zshrc ~
-cp -r .config ~
-
-# zsh
-sudo chown -R $(id -un) /usr/local/share/zsh # defaults to owned by UNKOWN:ssh which causes annoying compaudit messages
-sudo chsh "$(id -un)" --shell "/usr/bin/zsh"
-export ZPLUG_HOME=$HOME/.local/share/zsh/zplug # also in .zshrc
-git clone --depth 1 --branch 2.4.2 https://github.com/zplug/zplug $ZPLUG_HOME
+cp --recursive --update .config ~
 
 # nix
 export NIX_INSTALLER_NO_MODIFY_PROFILE=1 # already source nix.sh in .zshrc
 curl -L https://releases.nixos.org/nix/nix-2.25.2/install | sh # invokes sudo
 . ~/.nix-profile/etc/profile.d/nix.sh
 nix profile install
+
+# zsh
+sudo chsh "$(id -un)" --shell "/usr/bin/zsh"
+sudo chown -R $(id -un) /usr/local/share/zsh # defaults to owned by UNKOWN:ssh which causes annoying compaudit messages
+
+export ZPLUG_HOME=$HOME/.local/share/zsh/zplug # also in .zshrc
+git clone --depth 1 --branch 2.4.2 https://github.com/zplug/zplug $ZPLUG_HOME
+
+export ZSH_COMPLETION=$HOME/.local/share/zsh/completions # also in .zshrc
+mkdir -p $ZSH_COMPLETION
+fzf --zsh > $ZSH_COMPLETION/fzf
