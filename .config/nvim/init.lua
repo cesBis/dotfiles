@@ -19,7 +19,6 @@ vim.opt.rtp:prepend(lazypath)
 -- https://github.com/folke/lazy.nvim#-plugin-spec
 require("lazy").setup({
   {"pappasam/nvim-repl"},
-  {'junegunn/fzf'},
   {'windwp/nvim-autopairs', config = function() require("nvim-autopairs").setup() end},
   {'nvim-lualine/lualine.nvim', dependencies = {'nvim-tree/nvim-web-devicons'}},
   {'tpope/vim-fugitive'},
