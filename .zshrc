@@ -25,6 +25,9 @@ bindkey '^[[B' history-substring-search-down
 # Completions
 ############################################
 
+# some programs install their own completions
+fpath+=/usr/share/zsh/site-functions
+
 autoload -Uz compinit
 zmodload zsh/complist
 zstyle ':completion:*' menu select
