@@ -1,8 +1,6 @@
 ---------------------------------------------------------------------------------------------------------
 -- https://neovim.io/doc/user/options.html
 -- https://neovim.io/doc/user/lua.html
--- installed via apt
---
 -- see ./plugin/files, which are automatically sourced after this
 -- see :h runtimepath and :h startup
 --

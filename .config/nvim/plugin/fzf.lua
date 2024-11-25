@@ -1,6 +1,5 @@
 -- https://github.com/junegunn/fzf/blob/master/README-VIM.md
--- fzf installed via apt
-vim.cmd.source("/usr/share/doc/fzf/examples/fzf.vim")
+vim.cmd.source("~/.nix-profile/share/vim-plugins/fzf/plugin/fzf.vim")
 
 local fzf = function(spec) vim.fn["fzf#run"](vim.fn["fzf#wrap"](spec)) end
 

@@ -1,6 +1,7 @@
 # secrets go in ~/.zshenv, which is .gitignored
 
 export EDITOR=nvim
+export LANG=en_US.UTF-8
 export BROWSER=wslview
 # unlike .Rprofile and .zshrc, python doesn't have a default startup script
 export PYTHONSTARTUP=$HOME/.pyrc
@@ -9,11 +10,12 @@ export PATH=/home/conner/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/us
 
 alias lv='ls -hlsA'
 alias la='ls -A'
-alias bat='batcat' # see `apt show bat` and/or https://github.com/sharkdp/bat?tab=readme-ov-file#on-ubuntu-using-apt
+
+if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi
+export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive # https://nixos.wiki/wiki/Locales
 
 export ZPLUG_HOME=$HOME/.local/share/zsh/zplug
-# zplug came from apt
-. /usr/share/zplug/init.zsh
+. $ZPLUG_HOME/init.zsh
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "hlissner/zsh-autopair"
@@ -28,7 +30,7 @@ bindkey '^[[B' history-substring-search-down
 # Completions
 ############################################
 
-# some programs, like `distrobox`, have their own completions
+# some programs install their own completions
 fpath+=/usr/share/zsh/site-functions
 
 autoload -Uz compinit && compinit
@@ -36,9 +38,10 @@ zmodload zsh/complist
 zstyle ':completion:*' menu select
 _comp_options+=(globdots)
 
-if [ -d ~/.local/share/zsh/completions ]; then
-  for f in `ls ~/.local/share/zsh/completions`; do
-      source ~/.local/share/zsh/completions/$f
+export ZSH_COMPLETION=$HOME/.local/share/zsh/completions
+if [ -d  $ZSH_COMPLETION ]; then
+  for f in `ls $ZSH_COMPLETION `; do
+      source $ZSH_COMPLETION/$f
   done
 fi
 
