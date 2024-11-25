@@ -17,11 +17,6 @@ zplug "hlissner/zsh-autopair"
 zplug "zsh-users/zsh-history-substring-search"
 zplug load
 
-# TODO see about doing this in ./setup because here it slows down shell startup time. 
-if ! zplug check; then
-  zplug install
-fi
-
 export HISTORY_SUBSTRING_SEARCH_FUZZY=1
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down

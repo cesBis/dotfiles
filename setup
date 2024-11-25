@@ -17,6 +17,7 @@ sudo chown -R $(id -un) /usr/local/share/zsh # defaults to owned by UNKOWN:ssh w
 
 export ZPLUG_HOME=$HOME/.local/share/zsh/zplug # also in .zshrc
 git clone --depth 1 --branch 2.4.2 https://github.com/zplug/zplug $ZPLUG_HOME
+zsh -c ". ./.zshrc; zplug install"
 
 export ZSH_COMPLETION=$HOME/.local/share/zsh/completions # also in .zshrc
 mkdir -p $ZSH_COMPLETION
