@@ -6,6 +6,7 @@
       paths = with nixpkgs.legacyPackages.x86_64-linux; [
 # https://search.nixos.org/packages
         neovim nodejs_18 # coc.nvim and copilot.vim require nodejs
+        tmux
         bat
         fzf
       ];
