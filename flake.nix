@@ -9,6 +9,7 @@
         tmux
         bat
         fzf
+        ranger
       ];
     };
   };
