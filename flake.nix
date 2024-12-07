@@ -5,6 +5,7 @@
       name  = "devtools";
       paths = with nixpkgs.legacyPackages.x86_64-linux; [
 # https://search.nixos.org/packages
+        zsh zsh-autosuggestions zsh-syntax-highlighting
         neovim nodejs_18 # coc.nvim and copilot.vim require nodejs
         tmux
         bat

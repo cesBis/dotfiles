@@ -6,21 +6,6 @@ export LANG=en_US.UTF-8
 alias lv='ls -hlsA'
 alias la='ls -A'
 
-if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi
-export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive # https://nixos.wiki/wiki/Locales
-
-export ZPLUG_HOME=$HOME/.local/share/zsh/zplug
-. $ZPLUG_HOME/init.zsh
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "hlissner/zsh-autopair"
-zplug "zsh-users/zsh-history-substring-search"
-zplug load
-
-export HISTORY_SUBSTRING_SEARCH_FUZZY=1
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-
 ############################################
 # Completions
 ############################################
@@ -33,13 +18,6 @@ zmodload zsh/complist
 zstyle ':completion:*' menu select
 compinit
 _comp_options+=(globdots)
-
-export ZSH_COMPLETION=$HOME/.local/share/zsh/completions
-if [ -d  $ZSH_COMPLETION ]; then
-  for f in `ls $ZSH_COMPLETION `; do
-      source $ZSH_COMPLETION/$f
-  done
-fi
 
 ############################################
 # Miscelaneous (see `man zshoptions`)
@@ -107,3 +85,20 @@ zle-line-init() {
 zle -N zle-line-init
 echo -ne '\e[6 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[6 q' ;} # Use beam shape cursor for each new prompt.
+
+############################################
+# Plugins
+############################################
+
+if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]
+then
+  export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive # https://nixos.wiki/wiki/Locales
+  fpath+=~/.nix-profile/share/zsh/site-functions
+  . ~/.nix-profile/etc/profile.d/nix.sh
+  . ~/.nix-profile/share/fzf/completion.zsh
+  . ~/.nix-profile/share/fzf/key-bindings.zsh
+  . ~/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  # zsh-syntax-highlighting must come last
+  # https://github.com/zsh-users/zsh-syntax-highlighting?tab=readme-ov-file#why-must-zsh-syntax-highlightingzsh-be-sourced-at-the-end-of-the-zshrc-file
+  . ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
