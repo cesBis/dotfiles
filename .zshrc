@@ -24,9 +24,9 @@ _comp_options+=(globdots)
 ############################################
 
 HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=10000
-setopt inc_append_history_time hist_ignore_dups extended_history
+HISTSIZE=31000
+SAVEHIST=30000
+setopt share_history hist_ignore_dups
 
 setopt autocd extendedglob
 unsetopt BEEP
