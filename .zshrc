@@ -2,6 +2,7 @@
 
 export EDITOR=nvim
 export LANG=en_US.UTF-8
+export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive # https://nixos.wiki/wiki/Locales
 
 alias lv='ls -hlsA'
 alias la='ls -A'
@@ -90,11 +91,14 @@ preexec() { echo -ne '\e[6 q' ;} # Use beam shape cursor for each new prompt.
 # Plugins
 ############################################
 
-if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]
+if [ $(echo $PATH | cut -d : -f 1) != ~/.nix-profile/bin ] && [ -e ~/.nix-profile/etc/profile.d/nix.sh ]
 then
-  export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive # https://nixos.wiki/wiki/Locales
-  fpath+=~/.nix-profile/share/zsh/site-functions
   . ~/.nix-profile/etc/profile.d/nix.sh
+fi
+
+if [ $(echo $PATH | cut -d : -f 1) = ~/.nix-profile/bin ]
+then
+  fpath+=~/.nix-profile/share/zsh/site-functions
   . ~/.nix-profile/share/fzf/completion.zsh
   . ~/.nix-profile/share/fzf/key-bindings.zsh
   . ~/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh

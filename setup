@@ -5,7 +5,7 @@ cp .inputrc ~
 cp .zshrc ~
 cp --recursive --update .config ~
 
-export NIX_INSTALLER_NO_MODIFY_PROFILE=1 # already source nix.sh in .zshrc
+export NIX_INSTALLER_NO_MODIFY_PROFILE=1 # place nix.sh sourcing myself to keep PATH clean
 curl -L https://releases.nixos.org/nix/nix-2.25.2/install | sh # invokes sudo
-. ~/.nix-profile/etc/profile.d/nix.sh
+echo '. ~/.nix-profile/etc/profile.d/nix.sh' > ~/.profile && . ~/.profile
 nix profile install
