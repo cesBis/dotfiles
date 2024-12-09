@@ -8,6 +8,22 @@ Used to maintain a `wsl` branch as well, but let that go in favor of documenting
 
 As of now, I spend most of my time developing in WSL, so some of these notes are less about WSL and more about comforts for my pet.
 
+### `/etc/wsl.conf`
+
+https://learn.microsoft.com/en-us/windows/wsl/wsl-config
+
+```
+[network]
+generateResolvConf = false
+generateHosts = false
+
+[boot]
+systemd = true
+command = mount --make-rshared /
+```
+
+See also [`wsl --manage <distro> --set-sparse true`](https://devblogs.microsoft.com/commandline/windows-subsystem-for-linux-september-2023-update/) command.
+
 ### Unified Windows and WSL clipboard
 
 Use `win32yank` from windows neovim installation.
