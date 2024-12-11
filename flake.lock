@@ -1,5 +1,37 @@
 {
   "nodes": {
+    "chatbot": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1726734798,
+        "narHash": "sha256-QUZrFU/+TPBEU8yi9gmyRYjI/u7DP88AxcS0RMk7Jvk=",
+        "owner": "robitx",
+        "repo": "gp.nvim",
+        "rev": "2372d5323c6feaa2e9c19f7ccb537c615d878e18",
+        "type": "github"
+      },
+      "original": {
+        "owner": "robitx",
+        "repo": "gp.nvim",
+        "type": "github"
+      }
+    },
+    "copilot": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1728401940,
+        "narHash": "sha256-9264TNocFvtC2znvgfjpwLWBTGfg1U5Fr0dZkkyCYpQ=",
+        "owner": "github",
+        "repo": "copilot.vim",
+        "rev": "87038123804796ca7af20d1b71c3428d858a9124",
+        "type": "github"
+      },
+      "original": {
+        "owner": "github",
+        "repo": "copilot.vim",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1731797254,
@@ -16,9 +48,28 @@
         "type": "github"
       }
     },
+    "repl": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1731601559,
+        "narHash": "sha256-9uIXu0ieFUNrDEb3A6XNnxwojO22OZkn3qv7H85RiaA=",
+        "owner": "pappasam",
+        "repo": "nvim-repl",
+        "rev": "155737a2186de98aabe4165cb8f72ff045027d3c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pappasam",
+        "repo": "nvim-repl",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "chatbot": "chatbot",
+        "copilot": "copilot",
+        "nixpkgs": "nixpkgs",
+        "repl": "repl"
       }
     }
   },
