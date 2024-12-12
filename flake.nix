@@ -15,6 +15,7 @@
       bat
       fzf
       ranger
+      jq
     ];
 
     chosen_vim_packages = with self.pkgs.vimPlugins; [
