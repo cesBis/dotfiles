@@ -10,7 +10,7 @@
 # https://search.nixos.org/packages
     chosen_tools = with self.pkgs; [
       zsh zsh-autosuggestions zsh-syntax-highlighting
-      self.wrapped_nvim nodejs_18 # coc.nvim and copilot.vim require nodejs
+      self.wrapped_nvim
       tmux
       bat
       fzf
@@ -42,7 +42,7 @@
     nvim_wrapper_config = self.pkgs.neovimUtils.makeNeovimConfig {
       withPython3 = false;
       extraPython3Packages = (_: [ ]);
-      withNodeJs = false;
+      withNodeJs = true; # coc.nvim and copilot.vim require nodejs
       withRuby = false;
       extraLuaPackages = (_: [ ]);
       plugins = self.chosen_vim_packages;
