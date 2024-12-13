@@ -4,6 +4,12 @@
 Also maintain a far less fancy `windows` branch.
 Used to maintain a `wsl` branch as well, but let that go in favor of documenting its quirks in this README.
 
+## TODO
+
+- consider replacing `coc.nvim` with more native tooling for LSP and completions
+    - why? installation of `coc_global_extensions` is the one remaining thing that gets setup on `nvim` first launch rather than by `setup`. Tried installing them via `flake.nix`, but `coc-jedi` and `coc-marksman` aren't in `nixpkgs` and I gave up on trying to build them myself in `flake.nix`.
+    - possibly when neovim v0.11 is released, as [this pr](https://github.com/neovim/neovim/pull/31031) adds an `lsp/` directory to the runtime path
+
 ## WSL
 
 As of now, I spend most of my time developing in WSL, so some of these notes are less about WSL and more about comforts for my pet.
