@@ -66,6 +66,9 @@ keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], {sile
 -- note, oil kills netrw tools like :Explore
 keyset("n", "-", "<cmd>Oil<cr>")
 
+-- chatbot --------------------------
+keyset('n', '<C-n>', ':GpChatToggle tabnew<cr>G')
+
 -- keys brought on by plugins --------
 --
 -- gc for visual mode and motion comments, <int>gcc for commenting int lines, see :help commentary.txt

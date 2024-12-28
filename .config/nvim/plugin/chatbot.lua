@@ -1,5 +1,9 @@
 -- https://github.com/Robitx/gp.nvim
 require("gp").setup({
+  chat_shortcut_respond = {modes = {'i'}, shortcut = '<cr>'},
+  chat_shortcut_delete = {modes = {}, shortcut = ''},
+  chat_shortcut_stop = {modes = {'i'}, shortcut = 'x'},
+  chat_shortcut_new = {modes = {'i'}, shortcut = '<C-n>'},
   providers = {
     copilot = {disabled = false},
     openai = {disabled = true},
@@ -22,12 +26,4 @@ require("gp").setup({
     }
   },
   chat_template = require("gp.defaults").short_chat_template,
-  -- disabling shortcuts in favor of custom commands below
-  chat_shortcut_respond = {modes = {}, shortcut = ''},
-  chat_shortcut_delete = {modes = {}, shortcut = ''},
-  chat_shortcut_stop = {modes = {}, shortcut = ''},
-  chat_shortcut_new = {modes = {}, shortcut = ''},
 })
-
-vim.api.nvim_create_user_command("Botstart", ":GpChatNew tabnew", {})
-vim.api.nvim_create_user_command("Botresponse", ":GpChatRespond", {})
