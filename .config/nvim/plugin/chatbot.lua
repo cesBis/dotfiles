@@ -3,9 +3,11 @@ if os.getenv('OLLAMA_HOST') then ollama_host = os.getenv('OLLAMA_HOST') else oll
 -- https://github.com/Robitx/gp.nvim
 require("gp").setup({
   chat_shortcut_respond = {modes = {'i'}, shortcut = '<cr>'},
+  chat_shortcut_stop = {modes = {'n'}, shortcut = '<ESC>'},
   chat_shortcut_delete = {modes = {}, shortcut = ''},
-  chat_shortcut_stop = {modes = {'i'}, shortcut = 'x'},
-  chat_shortcut_new = {modes = {'i'}, shortcut = '<C-n>'},
+  chat_shortcut_new = {modes = {}, shortcut = ''},
+  chat_confirm_delete = false,
+  chat_free_cursor = true,
   providers = {
     copilot = {disabled = false},
     ollama = {
