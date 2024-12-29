@@ -2,27 +2,28 @@ if os.getenv('OLLAMA_HOST') then ollama_host = os.getenv('OLLAMA_HOST') else oll
 
 -- https://github.com/Robitx/gp.nvim
 require("gp").setup({
+
   chat_shortcut_respond = {modes = {'i'}, shortcut = '<cr>'},
   chat_shortcut_stop = {modes = {'n'}, shortcut = '<ESC>'},
   chat_shortcut_delete = {modes = {}, shortcut = ''},
   chat_shortcut_new = {modes = {}, shortcut = ''},
+
   chat_confirm_delete = false,
   chat_free_cursor = true,
+  chat_template = require("gp.defaults").short_chat_template,
+
   providers = {
     copilot = {disabled = false},
-    ollama = {
-      endpoint = "http://" .. ollama_host .. "/v1/chat/completions",
-      disabled = false,
-    },
+    ollama = {disabled = false, endpoint = "http://" .. ollama_host .. "/v1/chat/completions"},
     openai = {disabled = true},
   },
+
   agents = {
-    -- a ChatCopilot agent is provided by default
-    -- change agents with :GpAgent ChatCopilot
+    -- change agents with :GpAgent name
     -- agent choice is persisted on disk across sessions
     {
       provider = "copilot",
-      name = "DocBot",
+      name = "LinkCopilot",
       chat = true,
       command = false,
       model = { model = "gpt-4o", temperature = 0.3, top_p = 1 },
@@ -34,19 +35,23 @@ require("gp").setup({
     },
     {
       provider = "ollama",
-      name = "Llama",
+      name = "CodeDuckLlama",
       chat = true,
       command = false,
-      model = { model = "llama3.1", temperature = 0.3, top_p = 1 },
-      system_prompt = "You are an assistant to a computer programmer."
+      model = { model = "gemma2", temperature = 0.4, top_p = 1 },
+      system_prompt = "You are an experienced computer programmer."
+                   .." An excellent mentor and helpful assistant, but terse, blunt, and focused."
                    .." An expert in related documentation, including docs.python.org, and the unix `man` pages."
                    .." Please help me find related documentation."
                    .." Help by providing reference examples, and discussing ideas."
                    .." Be concise."
                    .." Don't provide advice."
-                   .." Use examples to introduce concepts and key words."
-                   .." Conclude with a short list of related keywords for searching. "
-    }
-  },
-  chat_template = require("gp.defaults").short_chat_template,
+                   .." Use examples to introduce concepts and **keywords**."
+    },
+    -- disable default agents for more applicable tab completions
+    {name = 'ChatCopilot', disable = true},
+    {name = 'ChatGPT4o', disable = true},
+    {name = 'ChatGPT4o-mini', disable = true},
+    {name = 'ChatOllamaLlama3.1-8B', disable = true},
+  }
 })
