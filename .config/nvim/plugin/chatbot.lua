@@ -34,6 +34,21 @@ require("gp").setup({
       .. "- When reasonable, conclude your response with a concise summary to aid the user.\n"
     },
     {
+      provider = "copilot",
+      name = "CodeDuckCopilot",
+      chat = true,
+      command = false,
+      model = { model = "gpt-4o", temperature = 0.4, top_p = 1 },
+      system_prompt = "You are an experienced computer programmer."
+                   .." An excellent mentor and helpful assistant, but terse, blunt, and focused."
+                   .." An expert in related documentation, including docs.python.org, and the unix `man` pages."
+                   .." Please help me find related documentation."
+                   .." Help by providing reference examples, and discussing ideas."
+                   .." Be concise."
+                   .." Don't provide advice."
+                   .." Use examples to introduce concepts and **keywords**."
+    },
+    {
       provider = "ollama",
       name = "CodeDuckLlama",
       chat = true,
