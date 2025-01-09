@@ -45,11 +45,8 @@ keyset('n', '<leader>d', fzf_dirs)
 keyset('n', '<leader>g', ':FzfGrepInGitFiles ')
 
 -- github copilot -------------------
--- from :help copilot
--- accept on `->` arrow key, like my shell autocomplete, not TAB, that's for coc
 keyset('i', '<Right>', 'copilot#Accept("\\<CR>")', {expr = true,  replace_keycodes = false})
 keyset('i', '<C-Right>', '<Plug>(copilot-accept-word)')
-vim.g.copilot_no_tab_map = true
 
 -- CoC ------------------------------
 keyset("n", "<leader>o", "<cmd>CocOutline<cr>")
@@ -63,7 +60,6 @@ keyset("i", "<TAB>", [[coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_sp
 keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], {silent = true, noremap = true, expr = true, replace_keycodes = false})
 
 -- oil ------------------------------
--- note, oil kills netrw tools like :Explore
 keyset("n", "-", "<cmd>Oil<cr>")
 
 -- chatbot --------------------------
