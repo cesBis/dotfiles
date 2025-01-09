@@ -41,8 +41,8 @@ keyset('x', 'E', '$%')
 
 -- fzf ------------------------------
 keyset('n', '<leader>f', fzf_files)
-keyset('n', '<leader>d', fzf_dirs)
-keyset('n', '<leader>g', ':FzfGrepInGitFiles ')
+keyset('n', '<leader>fd', fzf_dirs)
+keyset('n', '<leader>fg', ':FzfGrepInGitFiles ')
 
 -- github copilot -------------------
 keyset('i', '<Right>', 'copilot#Accept("\\<CR>")', {expr = true,  replace_keycodes = false})
