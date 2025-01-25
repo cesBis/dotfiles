@@ -32,8 +32,8 @@ keyset('n','<leader>uw', '<cmd>set nowrap<cr>')
 
 -- nvim-repl ------------------------
 keyset('n', '<S-TAB>', '<cmd>ReplToggle<cr>')
-keyset('n', '<TAB>', '<Plug>ReplSendLine')
-keyset('x', '<TAB>', '<Plug>ReplSendVisual')
+keyset('n', '<TAB>', '<Plug>(ReplSendLine)')
+keyset('x', '<TAB>', '<Plug>(ReplSendVisual)')
 -- exit terminal with Ctrl+q
 keyset('t', '<C-q>', '<C-\\><C-n>')
 -- wrap R expression (TODO: see about a lua function that would handle python and R)

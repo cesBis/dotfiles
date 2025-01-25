@@ -51,11 +51,11 @@
     "repl": {
       "flake": false,
       "locked": {
-        "lastModified": 1731601559,
-        "narHash": "sha256-9uIXu0ieFUNrDEb3A6XNnxwojO22OZkn3qv7H85RiaA=",
+        "lastModified": 1737651093,
+        "narHash": "sha256-p0IaNa8dKoF+flnBQV3dF7WDYkxkHbeXyRDbrNPszeg=",
         "owner": "pappasam",
         "repo": "nvim-repl",
-        "rev": "155737a2186de98aabe4165cb8f72ff045027d3c",
+        "rev": "a214145602599fdb51e2f8c437fbecaf709caa47",
         "type": "github"
       },
       "original": {
