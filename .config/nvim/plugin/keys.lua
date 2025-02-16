@@ -41,8 +41,8 @@ keyset('x', 'E', '$%')
 
 -- fzf ------------------------------
 keyset('n', '<leader>f', fzf_files)
-keyset('n', '<leader>fd', fzf_dirs)
-keyset('n', '<leader>fg', ':FzfGrepInGitFiles ')
+keyset('n', '<leader>Fd', fzf_dirs)
+keyset('n', '<leader>Fg', ':FzfGrepInGitFiles ')
 
 -- github copilot -------------------
 keyset('i', '<Right>', 'copilot#Accept("\\<CR>")', {expr = true,  replace_keycodes = false})
@@ -51,21 +51,22 @@ keyset('i', '<C-Right>', '<Plug>(copilot-accept-word)')
 -- CoC ------------------------------
 keyset("n", "<leader>o", "<cmd>CocOutline<cr>")
 -- see `:h coc-lsp`
-keyset("n", "[g", "<Plug>(coc-diagnostic-prev)", {silent = true})
-keyset("n", "]g", "<Plug>(coc-diagnostic-next)", {silent = true})
+keyset("n", "[l", "<Plug>(coc-diagnostic-prev)", {silent = true})
+keyset("n", "]l", "<Plug>(coc-diagnostic-next)", {silent = true})
 -- GoTo code navigation.
-keyset("n", "gd", "<Plug>(coc-definition)", {silent = true})
+keyset("n", "<leader>ld", "<Plug>(coc-definition)", {silent = true})
+keyset("n", "<leader>lr", "<Plug>(coc-references)", {silent = true})
+keyset("n", "<leader>li", "<Plug>(coc-implementation)", {silent = true})
 -- Tab complete
 keyset("i", "<TAB>", [[coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()]], {silent = true, noremap = true, expr = true, replace_keycodes = false})
 keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], {silent = true, noremap = true, expr = true, replace_keycodes = false})
 
 -- oil ------------------------------
-keyset("n", "-", "<cmd>Oil<cr>")
+keyset("n", "<leader>e", "<cmd>Oil<cr>")
 
 -- chatbot --------------------------
 keyset('n', '<leader>b', ':GpChatNew<cr>')
-keyset('n', '<leader>bc', ':GpChatNew tabnew<cr>')
-keyset('n', '<leader>bf', ':GpChatFinder<cr>')
+keyset('n', '<leader>Fb', ':GpChatFinder<cr>')
 
 -- keys brought on by plugins --------
 --
