@@ -23,7 +23,7 @@ fzf_dirs = function()
       .. "-path './renv/library' -prune -o "
       .. "-type d -print | tail +2 | cut -c 3- | sort",
     options = "--preview 'ls -A {}'",
-    sink = "e",
+    sink = "Oil",
   })
 end
 
