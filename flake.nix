@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     repl = { url = "github:pappasam/nvim-repl"; flake = false; };
     chatbot = { url = "github:robitx/gp.nvim"; flake = false; };
     copilot = { url = "github:github/copilot.vim"; flake = false; };
