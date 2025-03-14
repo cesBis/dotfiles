@@ -8,7 +8,7 @@
 
   outputs = inputs @ { self, nixpkgs, ... }: {
 # https://search.nixos.org/packages
-    chosen_tools = with self.pkgs; [
+    devtools = with self.pkgs; [
       zsh zsh-autosuggestions zsh-syntax-highlighting
       self.wrapped_nvim
       tmux
@@ -16,6 +16,10 @@
       fzf
       ranger
       jq
+    ];
+
+    formatters = with self.pkgs; [
+      self.pkgs.ruff
       self.air
     ];
 
@@ -67,9 +71,14 @@
       '';
     };
 
-    packages.x86_64-linux.default = self.pkgs.buildEnv {
+    packages.x86_64-linux.devtools = self.pkgs.buildEnv {
       name  = "devtools";
-      paths = self.chosen_tools;
+      paths = self.devtools;
+    };
+
+    packages.x86_64-linux.formatters = self.pkgs.buildEnv {
+      name  = "formatters";
+      paths = self.formatters;
     };
   };
 }
