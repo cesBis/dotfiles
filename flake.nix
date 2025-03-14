@@ -7,54 +7,52 @@
   };
 
   outputs = inputs @ { self, nixpkgs, ... }: {
+
+    packages.x86_64-linux.devtools = self.pkgs.buildEnv {
+      name  = "devtools";
+      paths = with self.pkgs; [
 # https://search.nixos.org/packages
-    devtools = with self.pkgs; [
-      zsh zsh-autosuggestions zsh-syntax-highlighting
-      self.wrapped_nvim
-      tmux
-      bat
-      fzf
-      ranger
-      jq
-    ];
+        zsh zsh-autosuggestions zsh-syntax-highlighting
+        tmux bat fzf ranger jq
+        self.neovim
+      ];
+    };
 
-    formatters = with self.pkgs; [
-      self.pkgs.ruff
-      self.air
-    ];
-
-    chosen_vim_packages = with self.pkgs.vimPlugins; [
-      nvim-web-devicons # used by lualine and oil
-      nvim-autopairs
-      lualine-nvim
-      vim-fugitive vim-rhubarb
-      vim-commentary
-      vim-surround
-      coc-nvim
-      ccc-nvim
-      oil-nvim
-      (self.rollVimPkg inputs.repl "repl")
-      (self.rollVimPkg inputs.chatbot "chatbot")
-      (self.rollVimPkg inputs.copilot "copilot")
-    ];
+    packages.x86_64-linux.formatters = self.pkgs.buildEnv {
+      name  = "formatters";
+      paths = with self.pkgs; [
+        ruff
+        self.air
+      ];
+    };
 
     pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-    rollVimPkg = src: pname: self.pkgs.vimUtils.buildVimPlugin {
-      inherit pname src;
-      version = src.lastModifiedDate;
-    };
-
-    nvim_wrapper_config = self.pkgs.neovimUtils.makeNeovimConfig {
-      withPython3 = false;
-      extraPython3Packages = (_: [ ]);
-      withNodeJs = true; # coc.nvim and copilot.vim require nodejs
-      withRuby = false;
-      extraLuaPackages = (_: [ ]);
-      plugins = self.chosen_vim_packages;
-      wrapRc = false;
-    };
-    wrapped_nvim = self.pkgs.wrapNeovimUnstable self.pkgs.neovim-unwrapped self.nvim_wrapper_config;
+    neovim = self.pkgs.wrapNeovimUnstable self.pkgs.neovim-unwrapped (
+      self.pkgs.neovimUtils.makeNeovimConfig {
+        plugins = with self.pkgs.vimPlugins; [
+          nvim-web-devicons # used by lualine and oil
+          nvim-autopairs
+          lualine-nvim
+          vim-fugitive vim-rhubarb
+          vim-commentary
+          vim-surround
+          coc-nvim
+          ccc-nvim
+          oil-nvim
+          (self.rollVimPkg inputs.repl "repl")
+          (self.rollVimPkg inputs.chatbot "chatbot")
+          (self.rollVimPkg inputs.copilot "copilot")
+        ];
+        withNodeJs = true; # coc.nvim and copilot.vim require nodejs
+        withPython3 = false;
+        extraPython3Packages = (_: [ ]);
+        withRuby = false;
+        extraLuaPackages = (_: [ ]);
+        wrapRc = false;
+      }
+    );
+    rollVimPkg = src: pname: self.pkgs.vimUtils.buildVimPlugin { inherit pname src; version = src.lastModifiedDate; };
 
     air = self.pkgs.stdenv.mkDerivation {
       pname = "air";
@@ -71,14 +69,5 @@
       '';
     };
 
-    packages.x86_64-linux.devtools = self.pkgs.buildEnv {
-      name  = "devtools";
-      paths = self.devtools;
-    };
-
-    packages.x86_64-linux.formatters = self.pkgs.buildEnv {
-      name  = "formatters";
-      paths = self.formatters;
-    };
   };
 }
