@@ -16,6 +16,7 @@
       fzf
       ranger
       jq
+      self.air
     ];
 
     chosen_vim_packages = with self.pkgs.vimPlugins; [
@@ -50,6 +51,21 @@
       wrapRc = false;
     };
     wrapped_nvim = self.pkgs.wrapNeovimUnstable self.pkgs.neovim-unwrapped self.nvim_wrapper_config;
+
+    air = self.pkgs.stdenv.mkDerivation {
+      pname = "air";
+      version = "0.4.1";
+
+      src = self.pkgs.fetchurl {
+        url = "https://github.com/posit-dev/air/releases/download/0.4.1/air-x86_64-unknown-linux-gnu.tar.gz";
+        sha256 = "10f7f682f888dfac0cc132eaad30f8d294e1fb7ae18713a1b428a97843e26934";
+      };
+
+      installPhase = ''
+        mkdir -p $out/bin
+        tar --directory $out/bin --file $src --strip-components 1 --extract --auto-compress
+      '';
+    };
 
     packages.x86_64-linux.default = self.pkgs.buildEnv {
       name  = "devtools";
