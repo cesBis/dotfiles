@@ -14,3 +14,6 @@ macro("G",
   {nargs=1}
 )
 macro("Gcommit", ":G commit --all --verbose", {})
+
+-- :Repl from nvim-repl
+macro("Z", "Repl zsh", {})
