@@ -65,7 +65,8 @@ keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], {sile
 keyset("n", "<leader>e", "<cmd>Oil<cr>")
 
 -- chatbot --------------------------
-keyset('n', '<leader>b', ':GpChatNew<cr>')
+keyset('n', '<leader>b', ':GpChatNew tabnew<cr>')
+keyset('x', '<leader>bp', ':GpChatPaste<cr>')
 keyset('n', '<leader>Fb', ':GpChatFinder<cr>')
 
 -- keys brought on by plugins --------
