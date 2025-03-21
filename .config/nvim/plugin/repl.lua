@@ -2,6 +2,6 @@
 vim.g.repl_split = "bottom"
 vim.g.repl_filetype_commands = {
   python = 'ipython',
-  r = 'R',
+  r = 'R --quiet',
   vim = 'nvim --clean -ERM',
 }
