@@ -4,8 +4,9 @@ export EDITOR=nvim
 export LANG=en_US.UTF-8
 export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive # https://nixos.wiki/wiki/Locales
 
-alias lv='ls -hlsA'
-alias la='ls -A'
+alias ls='ls --group-directories-first'
+alias lv='ls -hlsA --group-directories-first'
+alias la='ls -A --group-directories-first'
 # see https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/git.plugin.zsh
 alias g='git'
 alias ga='git add'
