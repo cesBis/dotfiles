@@ -14,6 +14,16 @@ macro("G",
   {nargs=1}
 )
 macro("Gcommit", ":G commit --all --verbose", {})
+macro("Glog",
+  function(opt)
+    vim.cmd("G log --oneline --decorate")
+    open_commit_preview_to_the_right = vim.api.nvim_replace_termcodes("p:wincmd H<cr>", true, true, true)
+    vim.api.nvim_feedkeys(open_commit_preview_to_the_right, "m", false)
+    -- fugitive uses p for preview, but enter feels more natural here, so override for just this buffer
+    vim.keymap.set('n', '<cr>', 'p', {buffer = true, remap = true})
+  end,
+  {}
+)
 
 -- :Repl from nvim-repl
 macro("Z", "Repl zsh", {})
