@@ -11,3 +11,6 @@ export NIX_INSTALLER_NO_MODIFY_PROFILE=1 # place nix.sh sourcing myself to keep 
 curl -L https://releases.nixos.org/nix/nix-2.25.2/install | sh # invokes sudo
 echo '. ~/.nix-profile/etc/profile.d/nix.sh' > ~/.profile && . ~/.profile
 nix profile install .#devtools
+
+# setup for neovim chatbot plugin robitx/gp.nvim
+echo '{"github.com":{"user":"'$GITHUB_USER'","oauth_token":"'$GITHUB_TOKEN'"}}' > ~/.config/github-copilot/hosts.json
