@@ -8,9 +8,10 @@ cp --recursive --update .config ~
 export NIX_INSTALLER_NO_MODIFY_PROFILE=1 # place nix.sh sourcing myself to keep PATH clean
 [ -x /usr/bin/apt ] && sudo sh -c "apt-get update && apt-get install -y acl && setfacl -k /tmp" # https://github.com/NixOS/nix/issues/6680#issuecomment-1230902525
 [ -e ~/.zprofile ] && rm ~/.zprofile # github codespaces has this file resource .profile
-curl -L https://releases.nixos.org/nix/nix-2.25.2/install | sh # invokes sudo
+curl -L https://releases.nixos.org/nix/nix-2.30.1/install | sh # invokes sudo
 echo '. ~/.nix-profile/etc/profile.d/nix.sh' > ~/.profile && . ~/.profile
 nix profile install .#devtools
 
 # setup for neovim chatbot plugin robitx/gp.nvim
-echo '{"github.com":{"user":"'$GITHUB_USER'","oauth_token":"'$GITHUB_TOKEN'"}}' > ~/.config/github-copilot/hosts.json
+# TODO move to zshrc, needs done on each boot in codespaces
+#echo '{"github.com":{"user":"'$GITHUB_USER'","oauth_token":"'$GITHUB_TOKEN'"}}' > ~/.config/github-copilot/hosts.json
