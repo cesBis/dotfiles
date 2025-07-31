@@ -131,6 +131,11 @@ fi
 
 if [ $(echo $PATH | cut -d : -f 1) = ~/.nix-profile/bin ]
 then
+  # setup for neovim chatbot plugin robitx/gp.nvim
+  # it seems codespaces rotates GITHUB_TOKEN, so this needs executed once per codespace login
+  # maybe move to ~/.profile instead, to avoid reexecuting with every tmux pane
+  [ -n "$CODESPACES" ] && echo '{"github.com":{"user":"'$GITHUB_USER'","oauth_token":"'$GITHUB_TOKEN'"}}' > ~/.config/github-copilot/hosts.json
+
   fpath+=~/.nix-profile/share/zsh/site-functions
   . ~/.nix-profile/share/fzf/completion.zsh
   . ~/.nix-profile/share/fzf/key-bindings.zsh
