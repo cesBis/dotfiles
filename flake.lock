@@ -3,11 +3,11 @@
     "chatbot": {
       "flake": false,
       "locked": {
-        "lastModified": 1726734798,
-        "narHash": "sha256-QUZrFU/+TPBEU8yi9gmyRYjI/u7DP88AxcS0RMk7Jvk=",
+        "lastModified": 1754903071,
+        "narHash": "sha256-+K536d3WF5eHRTSgkhn1NLFHms67iw4A0Ql8OZ9TgTw=",
         "owner": "robitx",
         "repo": "gp.nvim",
-        "rev": "2372d5323c6feaa2e9c19f7ccb537c615d878e18",
+        "rev": "c37f154b97690c4925fef4e35ffdbf2c844b5f4e",
         "type": "github"
       },
       "original": {
@@ -19,11 +19,11 @@
     "copilot": {
       "flake": false,
       "locked": {
-        "lastModified": 1728401940,
-        "narHash": "sha256-9264TNocFvtC2znvgfjpwLWBTGfg1U5Fr0dZkkyCYpQ=",
+        "lastModified": 1759286534,
+        "narHash": "sha256-dL+yxTPSjX5PDJ4LgqFoS1HtkZV9G1S6VD+w+CPhil8=",
         "owner": "github",
         "repo": "copilot.vim",
-        "rev": "87038123804796ca7af20d1b71c3428d858a9124",
+        "rev": "da369d90cfd6c396b1d0ec259836a1c7222fb2ea",
         "type": "github"
       },
       "original": {
@@ -34,16 +34,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1740603184,
-        "narHash": "sha256-t+VaahjQAWyA+Ctn2idyo1yxRIYpaDxMgHkgCNiMJa4=",
+        "lastModified": 1760580664,
+        "narHash": "sha256-/YdfibIrnqXAL8p5kqCU345mzpHoOtuVIkMiI2pF4Dc=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "f44bd8ca21e026135061a0a57dcf3d0775b67a49",
+        "rev": "98ff3f9af2684f6136c24beef08f5e2033fc5389",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-24.11",
+        "ref": "nixos-25.05",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -51,11 +51,11 @@
     "repl": {
       "flake": false,
       "locked": {
-        "lastModified": 1737651093,
-        "narHash": "sha256-p0IaNa8dKoF+flnBQV3dF7WDYkxkHbeXyRDbrNPszeg=",
+        "lastModified": 1746409926,
+        "narHash": "sha256-S19JUbE9mX93lbh5Co/Vd196kk+APR6zheIaHq6WdMU=",
         "owner": "pappasam",
         "repo": "nvim-repl",
-        "rev": "a214145602599fdb51e2f8c437fbecaf709caa47",
+        "rev": "b2dc92607fd6d1833b9c2bd916eeedcb04cad7de",
         "type": "github"
       },
       "original": {
