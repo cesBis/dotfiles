@@ -27,3 +27,19 @@ macro("Glog",
 
 -- :Repl from nvim-repl
 macro("Z", "Repl zsh", {})
+
+-- github copilot -------------------
+macro(
+  "StartCopilot",
+  function(opt)
+    require('copilot').setup({
+      suggestion = {
+        auto_trigger = true,
+        keymap = { accept = "<Right>" }
+      },
+    -- need to figure out how to download this, because it can't right to /nix/store by default
+    -- server = { type = "binary" },
+    })
+  end,
+  {}
+)

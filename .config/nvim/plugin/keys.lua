@@ -44,11 +44,6 @@ keyset('n', '<leader>f', fzf_files)
 keyset('n', '<leader>Fd', fzf_dirs)
 keyset('n', '<leader>Fg', ':FzfGrepInGitFiles ')
 
--- github copilot -------------------
-keyset('i', '<Right>', 'copilot#Accept("\\<CR>")', {expr = true,  replace_keycodes = false})
-keyset('i', '<C-Right>', '<Plug>(copilot-accept-word)')
-
-
 -- blink.nvim -----------------------
 require('blink.cmp').setup({
   keymap = {

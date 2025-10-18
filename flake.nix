@@ -4,7 +4,7 @@
     blink-cmp.url = "github:Saghen/blink.cmp/v1.7.0";
     repl = { url = "github:pappasam/nvim-repl"; flake = false; };
     chatbot = { url = "github:robitx/gp.nvim"; flake = false; };
-    copilot = { url = "github:github/copilot.vim"; flake = false; };
+    copilot = { url = "github:zbirenbaum/copilot.lua"; flake = false; };
   };
 
   outputs = inputs @ { self, nixpkgs, ... }: {
@@ -45,7 +45,7 @@
           (self.rollVimPkg inputs.chatbot "chatbot")
           (self.rollVimPkg inputs.copilot "copilot")
         ];
-        withNodeJs = true; # copilot.vim require nodejs
+        withNodeJs = true; # copilot.lua uses node by default, but can be configured to use a prebuilt binary
         withPython3 = false;
         extraPython3Packages = (_: [ ]);
         withRuby = false;
