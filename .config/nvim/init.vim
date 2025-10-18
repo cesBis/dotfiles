@@ -1,4 +1,4 @@
-set splitright splitbelow number relativenumber nowrap ignorecase smartcase clipboard=unnamedplus,unnamed termguicolors timeoutlen=450
+set splitright splitbelow number relativenumber nowrap ignorecase smartcase clipboard=unnamedplus,unnamed termguicolors timeoutlen=450 signcolumn=yes
 
 colorscheme quiet
 highlight diffAdded   guifg=#00ff33

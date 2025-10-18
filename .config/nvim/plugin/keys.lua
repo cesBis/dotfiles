@@ -48,18 +48,16 @@ keyset('n', '<leader>Fg', ':FzfGrepInGitFiles ')
 keyset('i', '<Right>', 'copilot#Accept("\\<CR>")', {expr = true,  replace_keycodes = false})
 keyset('i', '<C-Right>', '<Plug>(copilot-accept-word)')
 
--- CoC ------------------------------
-keyset("n", "<leader>o", "<cmd>CocOutline<cr>")
--- see `:h coc-lsp`
-keyset("n", "[l", "<Plug>(coc-diagnostic-prev)", {silent = true})
-keyset("n", "]l", "<Plug>(coc-diagnostic-next)", {silent = true})
--- GoTo code navigation.
-keyset("n", "<leader>ld", "<Plug>(coc-definition)", {silent = true})
-keyset("n", "<leader>lr", "<Plug>(coc-references)", {silent = true})
-keyset("n", "<leader>li", "<Plug>(coc-implementation)", {silent = true})
--- Tab complete
-keyset("i", "<TAB>", [[coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()]], {silent = true, noremap = true, expr = true, replace_keycodes = false})
-keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], {silent = true, noremap = true, expr = true, replace_keycodes = false})
+
+-- blink.nvim -----------------------
+require('blink.cmp').setup({
+  keymap = {
+    preset = 'none',
+    ['<TAB>'] = {'select_next', 'fallback'},
+    ['<S-TAB>'] = {'select_prev', 'fallback'},
+  },
+  completion = {list = {selection = {preselect = false, auto_insert = true}}},
+})
 
 -- oil ------------------------------
 keyset("n", "<leader>e", "<cmd>Oil<cr>")

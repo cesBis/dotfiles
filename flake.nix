@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    blink-cmp.url = "github:Saghen/blink.cmp/v1.7.0";
     repl = { url = "github:pappasam/nvim-repl"; flake = false; };
     chatbot = { url = "github:robitx/gp.nvim"; flake = false; };
     copilot = { url = "github:github/copilot.vim"; flake = false; };
@@ -37,14 +38,14 @@
           vim-fugitive vim-rhubarb
           vim-commentary
           vim-surround
-          coc-nvim
+          blink-cmp
           ccc-nvim
           oil-nvim
           (self.rollVimPkg inputs.repl "repl")
           (self.rollVimPkg inputs.chatbot "chatbot")
           (self.rollVimPkg inputs.copilot "copilot")
         ];
-        withNodeJs = true; # coc.nvim and copilot.vim require nodejs
+        withNodeJs = true; # copilot.vim require nodejs
         withPython3 = false;
         extraPython3Packages = (_: [ ]);
         withRuby = false;
