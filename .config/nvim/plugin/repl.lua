@@ -1,7 +1,10 @@
 -- https://github.com/pappasam/nvim-repl
-vim.g.repl_split = "bottom"
-vim.g.repl_filetype_commands = {
-  python = 'ipython',
-  r = 'R --quiet',
-  vim = 'nvim --clean -ERM',
-}
+require('repl').setup({
+  filetype_commands = {
+    python = {cmd = 'ipython'},
+    r = {cmd = 'R --quiet'},
+    vim = {cmd = 'nvim --clean -ERM'},
+  },
+  default = {cmd = "zsh", filetype = "zsh"},
+  open_window_default = "new",
+})
