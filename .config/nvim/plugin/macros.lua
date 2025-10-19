@@ -1,6 +1,3 @@
--- custom commands which depend only on base nvim or packages
--- commands leveraging plugins belong in the relevant plugin/ file
-
 local macro = vim.api.nvim_create_user_command
 
 macro("Spellcheck1ON", ":setlocal spell spelllang=en_us", {})
@@ -42,4 +39,20 @@ macro(
     })
   end,
   {}
+)
+
+-- fzf -------------------------------
+macro("EditAndSearch",
+  function(opts)
+    vim.cmd.edit(opts.fargs[#opts.fargs])
+    vim.fn.feedkeys("/" .. opts.fargs[1] .. "\r", "n")
+  end,
+  {nargs = '+'}
+)
+
+macro("FzfGrepInGitFiles",
+  function(opts)
+    fzf_grep_in_git_files(opts.fargs[1])
+  end,
+  {nargs = 1}
 )
