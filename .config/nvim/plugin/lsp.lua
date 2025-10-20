@@ -1,6 +1,8 @@
 -- examples at https://github.com/neovim/nvim-lspconfig/tree/master
 -- consider refactoring to use the lsp/ directory
 
+vim.opt.signcolumn = "yes"
+
 vim.lsp.config('R', {
   cmd = { 'R', '--no-echo', '-e', 'languageserver::run()' },
   filetypes = { 'r' },

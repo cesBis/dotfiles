@@ -1,7 +1,7 @@
 if os.getenv('OLLAMA_HOST') then ollama_host = os.getenv('OLLAMA_HOST') else ollama_host = '' end
 
 -- https://github.com/Robitx/gp.nvim
-require("gp").setup({
+return {
 
   chat_shortcut_respond = {modes = {'i'}, shortcut = '<cr>'},
   chat_shortcut_stop = {modes = {'n'}, shortcut = '<ESC>'},
@@ -64,9 +64,5 @@ require("gp").setup({
                    .." Use examples to introduce concepts and **keywords**."
     },
     -- disable default agents for more applicable tab completions
-    {name = 'ChatCopilot', disable = true},
-    {name = 'ChatGPT4o', disable = true},
-    {name = 'ChatGPT4o-mini', disable = true},
-    {name = 'ChatOllamaLlama3.1-8B', disable = true},
   }
-})
+}

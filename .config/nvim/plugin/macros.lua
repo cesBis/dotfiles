@@ -26,19 +26,7 @@ macro("Glog",
 macro("Z", "Repl zsh", {})
 
 -- github copilot -------------------
-macro(
-  "StartCopilot",
-  function(opt)
-    require('copilot').setup({
-      suggestion = {
-        auto_trigger = true,
-        keymap = { accept = "<Right>" }
-      },
-      server = { type = "binary", custom_server_filepath = "copilot-language-server"}
-    })
-  end,
-  {}
-)
+macro("StartCopilot", copilot_setup, {})
 
 -- fzf -------------------------------
 macro("EditAndSearch",

@@ -1,7 +1,7 @@
 -- https://github.com/nvim-lualine/lualine.nvim#default-configuration
 -- only need to be explicit when varying from default
 
-require('lualine').setup {
+return {
   sections = {
     lualine_a = {{'filename', path = 1}},
     lualine_b = {{'diagnostics', colored = false}},

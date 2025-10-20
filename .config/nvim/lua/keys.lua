@@ -44,16 +44,6 @@ keyset('n', '<leader>f', fzf_files)
 keyset('n', '<leader>Fd', fzf_dirs)
 keyset('n', '<leader>Fg', ':FzfGrepInGitFiles ')
 
--- blink.nvim -----------------------
-require('blink.cmp').setup({
-  keymap = {
-    preset = 'none',
-    ['<TAB>'] = {'select_next', 'fallback'},
-    ['<S-TAB>'] = {'select_prev', 'fallback'},
-  },
-  completion = {list = {selection = {preselect = false, auto_insert = true}}},
-})
-
 -- oil ------------------------------
 keyset("n", "<leader>e", "<cmd>Oil<cr>")
 
@@ -65,3 +55,19 @@ keyset('n', '<leader>Fb', ':GpChatFinder<cr>')
 -- keys brought on by plugins --------
 --
 -- gc for visual mode and motion comments, <int>gcc for commenting int lines, see :help commentary.txt
+
+-------------------------------------
+-- Packages with Bespoke Key Settings
+-------------------------------------
+
+M = {} -- used to return keymaps for packages with their own key binding mechanisms
+
+M.blink_keymap = {
+  preset = 'none',
+  ['<TAB>'] = {'select_next', 'fallback'},
+  ['<S-TAB>'] = {'select_prev', 'fallback'},
+}
+
+M.copilot_keymap = { accept = "<Right>" }
+
+return M
