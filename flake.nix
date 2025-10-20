@@ -13,7 +13,7 @@
       paths = with self.pkgs; [
 # https://search.nixos.org/packages
         zsh zsh-autosuggestions zsh-syntax-highlighting
-        tmux bat fzf ranger jq
+        tmux bat fzf jq
         self.neovim copilot-language-server
       ];
     };
@@ -32,11 +32,9 @@
       self.pkgs.neovimUtils.makeNeovimConfig {
         plugins = with self.pkgs.vimPlugins; [
           nvim-web-devicons # used by lualine and oil
-          nvim-autopairs
           lualine-nvim
           vim-fugitive vim-rhubarb
           vim-commentary
-          vim-surround
           blink-cmp
           copilot-lua
           ccc-nvim

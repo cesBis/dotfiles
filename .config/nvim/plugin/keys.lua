@@ -65,4 +65,3 @@ keyset('n', '<leader>Fb', ':GpChatFinder<cr>')
 -- keys brought on by plugins --------
 --
 -- gc for visual mode and motion comments, <int>gcc for commenting int lines, see :help commentary.txt
--- cs: change surrounding | ds: delete surrounding | ys: yes new surrounding , see :help surround
