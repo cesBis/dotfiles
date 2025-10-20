@@ -4,7 +4,6 @@
     blink-cmp.url = "github:Saghen/blink.cmp/v1.7.0";
     repl = { url = "github:pappasam/nvim-repl"; flake = false; };
     chatbot = { url = "github:robitx/gp.nvim"; flake = false; };
-    copilot = { url = "github:zbirenbaum/copilot.lua"; flake = false; };
   };
 
   outputs = inputs @ { self, nixpkgs, ... }: {
@@ -15,7 +14,7 @@
 # https://search.nixos.org/packages
         zsh zsh-autosuggestions zsh-syntax-highlighting
         tmux bat fzf ranger jq
-        self.neovim
+        self.neovim copilot-language-server
       ];
     };
 
@@ -27,7 +26,7 @@
       ];
     };
 
-    pkgs = nixpkgs.legacyPackages.x86_64-linux;
+    pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
 
     neovim = self.pkgs.wrapNeovimUnstable self.pkgs.neovim-unwrapped (
       self.pkgs.neovimUtils.makeNeovimConfig {
@@ -39,13 +38,13 @@
           vim-commentary
           vim-surround
           blink-cmp
+          copilot-lua
           ccc-nvim
           oil-nvim
           (self.rollVimPkg inputs.repl "repl")
           (self.rollVimPkg inputs.chatbot "chatbot")
-          (self.rollVimPkg inputs.copilot "copilot")
         ];
-        withNodeJs = true; # copilot.lua uses node by default, but can be configured to use a prebuilt binary
+        withNodeJs = false;
         withPython3 = false;
         extraPython3Packages = (_: [ ]);
         withRuby = false;

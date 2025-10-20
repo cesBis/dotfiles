@@ -34,8 +34,7 @@ macro(
         auto_trigger = true,
         keymap = { accept = "<Right>" }
       },
-    -- need to figure out how to download this, because it can't right to /nix/store by default
-    -- server = { type = "binary" },
+      server = { type = "binary", custom_server_filepath = "copilot-language-server"}
     })
   end,
   {}

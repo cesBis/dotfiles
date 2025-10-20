@@ -37,22 +37,6 @@
         "type": "github"
       }
     },
-    "copilot": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1760726160,
-        "narHash": "sha256-LM7JFBhBQ9uSWODzVJYT29cT6ra5fLFz/5uoto4/K30=",
-        "owner": "zbirenbaum",
-        "repo": "copilot.lua",
-        "rev": "3123983d00ae6859f8bc987d14ebb524bb41b618",
-        "type": "github"
-      },
-      "original": {
-        "owner": "zbirenbaum",
-        "repo": "copilot.lua",
-        "type": "github"
-      }
-    },
     "fenix": {
       "inputs": {
         "nixpkgs": [
@@ -123,11 +107,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1760580664,
-        "narHash": "sha256-/YdfibIrnqXAL8p5kqCU345mzpHoOtuVIkMiI2pF4Dc=",
+        "lastModified": 1760862643,
+        "narHash": "sha256-PXwG0TM7Ek87DNx4LbGWuD93PbFeKAJs4FfALtp7Wo0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "98ff3f9af2684f6136c24beef08f5e2033fc5389",
+        "rev": "33c6dca0c0cb31d6addcd34e90a63ad61826b28c",
         "type": "github"
       },
       "original": {
@@ -157,7 +141,6 @@
       "inputs": {
         "blink-cmp": "blink-cmp",
         "chatbot": "chatbot",
-        "copilot": "copilot",
         "nixpkgs": "nixpkgs_2",
         "repl": "repl"
       }
