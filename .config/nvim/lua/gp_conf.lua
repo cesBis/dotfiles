@@ -23,22 +23,12 @@ return {
     -- agent choice is persisted on disk across sessions
     {
       provider = "copilot",
-      name = "LinkCopilot",
-      chat = true,
-      command = false,
-      model = { model = "gpt-4o", temperature = 0.3, top_p = 1 },
-      system_prompt = "You are a customized internet search engine for a computer programmer.\n\n"
-      .. "The user provided a search phrase or query:\n\n"
-      .. "- Always start your response with a markdown formatted list of valid links. Prioritize official documentation.\n"
-      .. "- When reasonable, proceed to provide example code.\n"
-      .. "- When reasonable, conclude your response with a concise summary to aid the user.\n"
-    },
-    {
-      provider = "copilot",
       name = "CodeDuckCopilot",
       chat = true,
       command = false,
-      model = { model = "gpt-4o", temperature = 0.4, top_p = 1 },
+      -- "gpt-5" and "gpt-5-mini" are also tested working values. gpt-5-mini doesn't consume premium requests, and seems faster
+      -- see premium request usage at https://github.com/settings/copilot/features
+      model = { model = "claude-sonnet-4.5" },
       system_prompt = "You are an experienced computer programmer."
                    .." An excellent mentor and helpful assistant, but terse, blunt, and focused."
                    .." An expert in related documentation, including docs.python.org, and the unix `man` pages."
@@ -63,6 +53,5 @@ return {
                    .." Don't provide advice."
                    .." Use examples to introduce concepts and **keywords**."
     },
-    -- disable default agents for more applicable tab completions
   }
 }
