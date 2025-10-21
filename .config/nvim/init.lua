@@ -24,17 +24,24 @@ require('repl').setup({
   open_window_default = "new",
 })
 
+vim.opt.signcolumn = 'yes'
+vim.lsp.enable('r_language_server')
+vim.lsp.enable('jedi_language_server')
+vim.lsp.enable('marksman')
+vim.lsp.enable('copilot')
+
 require('blink.cmp').setup({
   keymap = require('keys').blink_keymap,
   completion = {list = {selection = {preselect = false, auto_insert = true}}},
-})
-
-copilot_setup = function(opt)
-  require('copilot').setup({
-    suggestion = {
-      auto_trigger = true,
-      keymap = require('keys').copilot_keymap
+  sources = {
+    default = { 'copilot' , 'lsp', 'buffer', 'path'},
+    providers = {
+      copilot = {
+        name = "copilot",
+        module = "blink-copilot",
+        score_offset = 100,
+        async = true,
+      },
     },
-    server = { type = "binary", custom_server_filepath = "copilot-language-server"}
-  })
-end
+  }
+})

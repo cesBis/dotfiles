@@ -25,9 +25,6 @@ macro("Glog",
 -- :Repl from nvim-repl
 macro("Z", "Repl zsh", {})
 
--- github copilot -------------------
-macro("StartCopilot", copilot_setup, {})
-
 -- fzf -------------------------------
 macro("EditAndSearch",
   function(opts)

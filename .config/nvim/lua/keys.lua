@@ -68,6 +68,4 @@ M.blink_keymap = {
   ['<S-TAB>'] = {'select_prev', 'fallback'},
 }
 
-M.copilot_keymap = { accept = "<Right>" }
-
 return M

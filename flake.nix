@@ -2,6 +2,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     blink-cmp.url = "github:Saghen/blink.cmp/v1.7.0";
+    blink-copilot = { url = "github:fang2hou/blink-copilot/v1.4.1"; flake = false; };
+    nvim-lspconfig = { url = "github:neovim/nvim-lspconfig"; flake = false; };
     repl = { url = "github:pappasam/nvim-repl"; flake = false; };
     chatbot = { url = "github:robitx/gp.nvim"; flake = false; };
   };
@@ -36,7 +38,8 @@
           vim-fugitive vim-rhubarb
           vim-commentary
           blink-cmp
-          copilot-lua
+          (self.rollVimPkg inputs.nvim-lspconfig "nvim-lspconfig")
+          (self.rollVimPkg inputs.blink-copilot "blink-copilot")
           ccc-nvim
           oil-nvim
           (self.rollVimPkg inputs.repl "repl")

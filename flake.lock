@@ -21,6 +21,23 @@
         "type": "github"
       }
     },
+    "blink-copilot": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1753494804,
+        "narHash": "sha256-Ya9RagGE+Awo9xuF8XtwgAO2B9DKJLNsLDU2wsEMumo=",
+        "owner": "fang2hou",
+        "repo": "blink-copilot",
+        "rev": "41e91a659bd9b8cba9ba2ea68a69b52ba5a9ebd8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "fang2hou",
+        "ref": "v1.4.1",
+        "repo": "blink-copilot",
+        "type": "github"
+      }
+    },
     "chatbot": {
       "flake": false,
       "locked": {
@@ -121,6 +138,22 @@
         "type": "github"
       }
     },
+    "nvim-lspconfig": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1760998175,
+        "narHash": "sha256-1pGZNc8gvXU/FVpt81AlFfkVFKnBgqUM9kTfodU8+pA=",
+        "owner": "neovim",
+        "repo": "nvim-lspconfig",
+        "rev": "e5c61b02f33b5c6538be25b2696b33b4cc91e667",
+        "type": "github"
+      },
+      "original": {
+        "owner": "neovim",
+        "repo": "nvim-lspconfig",
+        "type": "github"
+      }
+    },
     "repl": {
       "flake": false,
       "locked": {
@@ -140,8 +173,10 @@
     "root": {
       "inputs": {
         "blink-cmp": "blink-cmp",
+        "blink-copilot": "blink-copilot",
         "chatbot": "chatbot",
         "nixpkgs": "nixpkgs_2",
+        "nvim-lspconfig": "nvim-lspconfig",
         "repl": "repl"
       }
     },
