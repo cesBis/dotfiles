@@ -3,6 +3,8 @@ require 'keys'
 require('lualine').setup(require('lualine_conf'))
 require('gp').setup(require('gp_conf'))
 require("ccc").setup({highlighter = { auto_enable = true }})
+-- https://github.com/pappasam/nvim-repl
+require('repl').setup({ default = {cmd = "zsh"}, open_window_default = "new" })
 
 require("oil").setup {
   -- true breaks :GBrowse
@@ -13,16 +15,6 @@ require("oil").setup {
     },
 }
 
--- https://github.com/pappasam/nvim-repl
-require('repl').setup({
-  filetype_commands = {
-    python = {cmd = 'ipython'},
-    r = {cmd = 'R --quiet'},
-    vim = {cmd = 'nvim --clean -ERM'},
-  },
-  default = {cmd = "zsh", filetype = "zsh"},
-  open_window_default = "new",
-})
 
 vim.opt.signcolumn = 'yes'
 vim.lsp.enable('r_language_server')
