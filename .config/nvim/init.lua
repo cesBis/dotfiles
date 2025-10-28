@@ -1,28 +1,23 @@
 require 'fzf'
 require('lualine').setup(require('lualine_conf'))
 require('gp').setup(require('gp_conf'))
-require("ccc").setup({highlighter = { auto_enable = true }})
-require("outline").setup()
--- https://github.com/pappasam/nvim-repl
-require('repl').setup({ default = {cmd = "zsh"}, open_window_default = "new" })
+require('outline').setup()
 
-require("oil").setup {
-  -- true breaks :GBrowse
-  default_file_explorer = false,
-  skip_confirm_for_simple_edits = true,
-  view_options = {
-      show_hidden = true,
-    },
+require("ccc").setup { highlighter = { auto_enable = true } }
+
+-- https://github.com/pappasam/nvim-repl
+require("repl").setup {
+  default = { cmd = "zsh" },
+  open_window_default = "new",
 }
 
+require("oil").setup {
+  default_file_explorer = false, -- true breaks :GBrowse
+  skip_confirm_for_simple_edits = true,
+  view_options = { show_hidden = true },
+}
 
-vim.opt.signcolumn = 'yes'
-vim.lsp.enable('r_language_server')
-vim.lsp.enable('jedi_language_server')
-vim.lsp.enable('marksman')
-vim.lsp.enable('copilot')
-
-require('blink.cmp').setup({
+require('blink.cmp').setup {
   keymap = {
     preset = 'none',
     ['<TAB>'] = {'select_next', 'fallback'},
@@ -40,4 +35,4 @@ require('blink.cmp').setup({
       },
     },
   }
-})
+}
