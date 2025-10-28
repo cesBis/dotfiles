@@ -54,21 +54,3 @@ keyset('n', '<leader>Fb', ':GpChatFinder<cr>')
 
 -- outline --------------------------
 keyset('n', '<leader>o', ':Outline<cr>')
-
--- keys brought on by plugins --------
---
--- gc for visual mode and motion comments, <int>gcc for commenting int lines, see :help commentary.txt
-
--------------------------------------
--- Packages with Bespoke Key Settings
--------------------------------------
-
-M = {} -- used to return keymaps for packages with their own key binding mechanisms
-
-M.blink_keymap = {
-  preset = 'none',
-  ['<TAB>'] = {'select_next', 'fallback'},
-  ['<S-TAB>'] = {'select_prev', 'fallback'},
-}
-
-return M

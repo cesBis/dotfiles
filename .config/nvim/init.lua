@@ -1,5 +1,4 @@
 require 'fzf'
-require 'keys'
 require('lualine').setup(require('lualine_conf'))
 require('gp').setup(require('gp_conf'))
 require("ccc").setup({highlighter = { auto_enable = true }})
@@ -24,7 +23,11 @@ vim.lsp.enable('marksman')
 vim.lsp.enable('copilot')
 
 require('blink.cmp').setup({
-  keymap = require('keys').blink_keymap,
+  keymap = {
+    preset = 'none',
+    ['<TAB>'] = {'select_next', 'fallback'},
+    ['<S-TAB>'] = {'select_prev', 'fallback'},
+  },
   completion = {list = {selection = {preselect = false, auto_insert = true}}},
   sources = {
     default = { 'copilot' , 'lsp', 'buffer', 'path'},
