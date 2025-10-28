@@ -42,6 +42,7 @@
           (self.rollVimPkg inputs.blink-copilot "blink-copilot")
           ccc-nvim
           oil-nvim
+          outline-nvim
           (self.rollVimPkg inputs.repl "repl")
           (self.rollVimPkg inputs.chatbot "chatbot")
         ];

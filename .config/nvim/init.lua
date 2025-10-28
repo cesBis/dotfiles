@@ -3,6 +3,7 @@ require 'keys'
 require('lualine').setup(require('lualine_conf'))
 require('gp').setup(require('gp_conf'))
 require("ccc").setup({highlighter = { auto_enable = true }})
+require("outline").setup()
 -- https://github.com/pappasam/nvim-repl
 require('repl').setup({ default = {cmd = "zsh"}, open_window_default = "new" })
 

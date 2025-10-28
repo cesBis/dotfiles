@@ -52,6 +52,9 @@ keyset('n', '<leader>b', ':GpChatNew tabnew<cr>')
 keyset('x', '<leader>bp', ':GpChatPaste<cr>')
 keyset('n', '<leader>Fb', ':GpChatFinder<cr>')
 
+-- outline --------------------------
+keyset('n', '<leader>o', ':Outline<cr>')
+
 -- keys brought on by plugins --------
 --
 -- gc for visual mode and motion comments, <int>gcc for commenting int lines, see :help commentary.txt
