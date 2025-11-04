@@ -25,6 +25,13 @@ require('blink.cmp').setup {
     ['<S-TAB>'] = {'select_prev', 'fallback'},
   },
   completion = {list = {selection = {preselect = false, auto_insert = true}}},
+  cmdline = {
+    keymap = { preset = 'inherit' },
+    completion = {
+      menu = { auto_show = true },
+      list = {selection = {preselect = false, auto_insert = true}}
+    },
+  },
   sources = {
     default = { 'copilot' , 'lsp', 'buffer', 'path'},
     providers = {
