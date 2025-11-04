@@ -41,6 +41,10 @@ require('blink.cmp').setup {
         score_offset = 100,
         async = true,
       },
+      lsp = {
+        async = true,
+        fallbacks = {},
+      }
     },
   },
   signature = { enabled = true }
