@@ -17,6 +17,7 @@ require("oil").setup {
   view_options = { show_hidden = true },
 }
 
+-- https://cmp.saghen.dev/configuration/general.html
 require('blink.cmp').setup {
   keymap = {
     preset = 'none',
@@ -34,5 +35,6 @@ require('blink.cmp').setup {
         async = true,
       },
     },
-  }
+  },
+  signature = { enabled = true }
 }
