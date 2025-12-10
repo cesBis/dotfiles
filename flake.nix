@@ -1,9 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-    blink-cmp.url = "github:Saghen/blink.cmp/v1.7.0";
-    blink-copilot = { url = "github:fang2hou/blink-copilot/v1.4.1"; flake = false; };
-    nvim-lspconfig = { url = "github:neovim/nvim-lspconfig"; flake = false; };
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     repl = { url = "github:pappasam/nvim-repl"; flake = false; };
     chatbot = { url = "github:robitx/gp.nvim"; flake = false; };
   };
@@ -23,8 +20,7 @@
     packages.x86_64-linux.formatters = self.pkgs.buildEnv {
       name  = "formatters";
       paths = with self.pkgs; [
-        ruff
-        self.air
+        ruff air-formatter
       ];
     };
 
@@ -37,9 +33,8 @@
           lualine-nvim
           vim-fugitive vim-rhubarb
           vim-commentary
-          blink-cmp
-          (self.rollVimPkg inputs.nvim-lspconfig "nvim-lspconfig")
-          (self.rollVimPkg inputs.blink-copilot "blink-copilot")
+          blink-cmp blink-copilot
+          nvim-lspconfig
           ccc-nvim
           oil-nvim
           outline-nvim
@@ -54,22 +49,7 @@
         wrapRc = false;
       }
     );
+
     rollVimPkg = src: pname: self.pkgs.vimUtils.buildVimPlugin { inherit pname src; version = src.lastModifiedDate; };
-
-    air = self.pkgs.stdenv.mkDerivation {
-      pname = "air";
-      version = "0.4.1";
-
-      src = self.pkgs.fetchurl {
-        url = "https://github.com/posit-dev/air/releases/download/0.4.1/air-x86_64-unknown-linux-gnu.tar.gz";
-        sha256 = "10f7f682f888dfac0cc132eaad30f8d294e1fb7ae18713a1b428a97843e26934";
-      };
-
-      installPhase = ''
-        mkdir -p $out/bin
-        tar --directory $out/bin --file $src --strip-components 1 --extract --auto-compress
-      '';
-    };
-
   };
 }
