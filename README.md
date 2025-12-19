@@ -4,12 +4,6 @@
 Also maintain a far less fancy `windows` branch.
 Used to maintain a `wsl` branch as well, but let that go in favor of documenting its quirks in this README.
 
-## TODO
-
-Used to use coc.nvim for the outline.
-Check out https://github.com/hedyhli/outline.nvim
-to replace `keyset("n", "<leader>o", "<cmd>CocOutline<cr>")`
-
 ## WSL
 
 As of now, I spend most of my time developing in WSL, so some of these notes are less about WSL and more about comforts for my pet.
