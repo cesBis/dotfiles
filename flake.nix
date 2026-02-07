@@ -7,7 +7,7 @@
 
   outputs = inputs @ { self, nixpkgs, ... }: {
 
-    packages.x86_64-linux.devtools = self.pkgs.buildEnv {
+    packages.x86_64-linux.default = self.pkgs.buildEnv {
       name  = "devtools";
       paths = with self.pkgs; [
 # https://search.nixos.org/packages
