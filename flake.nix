@@ -8,7 +8,7 @@
   outputs = inputs @ { self, nixpkgs, ... }: {
 
     packages.x86_64-linux.default = self.pkgs.buildEnv {
-      name  = "devtools";
+      name = "devtools";
       paths = with self.pkgs; [
 # https://search.nixos.org/packages
         zsh zsh-autosuggestions zsh-syntax-highlighting
@@ -17,10 +17,17 @@
       ];
     };
 
-    packages.x86_64-linux.formatters = self.pkgs.buildEnv {
-      name  = "formatters";
+    packages.x86_64-linux.py = self.pkgs.buildEnv {
+      name = "python tools";
       paths = with self.pkgs; [
-        ruff air-formatter
+        uv ruff
+      ];
+    };
+
+    packages.x86_64-linux.R = self.pkgs.buildEnv {
+      name = "R tools";
+      paths = with self.pkgs; [
+        self.rig air-formatter
       ];
     };
 
@@ -51,5 +58,27 @@
     );
 
     rollVimPkg = src: pname: self.pkgs.vimUtils.buildVimPlugin { inherit pname src; version = src.lastModifiedDate; };
+
+    rig = self.pkgs.stdenv.mkDerivation {
+      pname = "rig";
+      version = "0.7.1";
+
+      src = self.pkgs.fetchurl {
+        url = "https://github.com/r-lib/rig/releases/download/v0.7.1/rig-linux-0.7.1.tar.gz";
+        sha256 = "5b48c32120d724b3932e1704e5a2d29b6757b6ccea6634876094b59c00075e9e";
+      };
+
+      buildPhase = ''
+        tar --directory . --file $src --extract --auto-compress
+      '';
+
+      sourceRoot = "."; # https://stackoverflow.com/questions/77160863/nix-derivation-error-unpacker-produced-multiple-directories
+
+      installPhase = ''
+        mkdir -p $out/bin
+        cp bin/rig $out/bin/rig
+        cp -r share $out
+      '';
+    };
   };
 }

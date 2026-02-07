@@ -124,6 +124,10 @@ preexec() { echo -ne '\e[6 q' ;} # Use beam shape cursor for each new prompt.
 # Plugins
 ############################################
 
+# uv tool puts stuff here
+# TODO: find a way to get it on the path ONCE without disagreeing with the logic below
+#[ -e $HOME/.local/bin ] && export PATH="$HOME/.local/bin:$PATH"
+
 if [ $(echo $PATH | cut -d : -f 1) != ~/.nix-profile/bin ] && [ -e ~/.nix-profile/etc/profile.d/nix.sh ]
 then
   . ~/.nix-profile/etc/profile.d/nix.sh
