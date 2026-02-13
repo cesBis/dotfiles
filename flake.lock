@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "R433nixpkgs": {
+      "locked": {
+        "lastModified": 1711361959,
+        "narHash": "sha256-qXOqiaxJfYOxQgRqdEdK0ddItKfzPFVSZyINij0C8+g=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "87f7f762d94dc125d5873d1d68f8c8090aaf5ec3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "87f7f76",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "chatbot": {
       "flake": false,
       "locked": {
@@ -50,6 +66,7 @@
     },
     "root": {
       "inputs": {
+        "R433nixpkgs": "R433nixpkgs",
         "chatbot": "chatbot",
         "nixpkgs": "nixpkgs",
         "repl": "repl"
