@@ -38,8 +38,9 @@ require('blink.cmp').setup {
       copilot = {
         name = "copilot",
         module = "blink-copilot",
-        score_offset = 100,
+        score_offset = -1,
         async = true,
+        opts = {max_completions = 1}
       },
       lsp = {
         async = true,
