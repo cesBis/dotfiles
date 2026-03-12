@@ -17,7 +17,14 @@
         # https://search.nixos.org/packages
         zsh zsh-autosuggestions zsh-syntax-highlighting
         tmux bat fzf jq
-        self.neovim copilot-language-server
+        self.neovim
+      ];
+    };
+
+    packages.x86_64-linux.github-copilot = self.pkgs.buildEnv {
+      name = "github copilot integration";
+      paths = with self.pkgs; [
+        copilot-language-server github-copilot-cli
       ];
     };
 
