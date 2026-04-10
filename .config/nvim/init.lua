@@ -1,6 +1,5 @@
 require 'fzf'
 require('lualine').setup(require('lualine_conf'))
-require('gp').setup(require('gp_conf'))
 require('outline').setup()
 
 require("ccc").setup { highlighter = { auto_enable = true } }

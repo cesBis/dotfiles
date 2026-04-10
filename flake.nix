@@ -1,15 +1,16 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     repl = { url = "github:pappasam/nvim-repl"; flake = false; };
-    chatbot = { url = "github:robitx/gp.nvim"; flake = false; };
     # https://history.nix-packages.com/ or github:jamesbrink/nxv
     R433nixpkgs.url = "github:nixos/nixpkgs/87f7f76";
   };
 
-  outputs = inputs @ { self, nixpkgs, ... }: {
+  outputs = inputs @ { self, ... }: {
 
-    pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
+    pkgs = import inputs.nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
+    young-pkgs = import inputs.nixpkgs-unstable { system = "x86_64-linux"; config.allowUnfree = true; };
 
     packages.x86_64-linux.default = self.pkgs.buildEnv {
       name = "devtools";
@@ -18,6 +19,7 @@
         zsh zsh-autosuggestions zsh-syntax-highlighting
         tmux bat fzf jq
         self.neovim
+        self.young-pkgs.opencode
       ];
     };
 
@@ -53,7 +55,7 @@
           oil-nvim
           outline-nvim
           (self.rollVimPkg inputs.repl "repl")
-          (self.rollVimPkg inputs.chatbot "chatbot")
+          self.young-pkgs.vimPlugins.opencode-nvim
         ];
         withNodeJs = false;
         withPython3 = false;

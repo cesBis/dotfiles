@@ -47,10 +47,9 @@ keyset('n', '<leader>Fg', ':FzfGrepInGitFiles ')
 -- oil ------------------------------
 keyset("n", "<leader>e", "<cmd>Oil<cr>")
 
--- chatbot --------------------------
-keyset('n', '<leader>b', ':GpChatNew tabnew<cr>')
-keyset('x', '<leader>bp', ':GpChatPaste<cr>')
-keyset('n', '<leader>Fb', ':GpChatFinder<cr>')
+-- opencode --------------------------
+keyset('n', '<leader>b', function() require("opencode").toggle() end)
+keyset('x', '<leader>bp', function() require("opencode").ask("@this: ", { submit = true }) end)
 
 -- outline --------------------------
 keyset('n', '<leader>o', ':Outline<cr>')
