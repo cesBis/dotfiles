@@ -97,3 +97,16 @@ export AZUREOPENAI_API_VERSION=
 export AZUREOPENAI_ENDPOINT=
 export AZUREOPENAI_API_KEY=
 ```
+
+## Nix
+
+When installed by curling the shell script, a `~/.nix-profile/etc/profile.d/nix.sh` is provided, which handles this.
+When installed with apt, put this in `~/.profile`.
+
+```
+NIX_LINK="$HOME/.nix-profile"
+if [ -e $NIX_LINK ]; then
+  export PATH="$NIX_LINK/bin:$PATH"
+  export XDG_DATA_DIRS="/usr/local/share/:/usr/share/:$NIX_LINK/share"
+fi
+```
