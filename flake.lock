@@ -1,6 +1,6 @@
 {
   "nodes": {
-    "R433nixpkgs": {
+    "R433": {
       "locked": {
         "lastModified": 1711361959,
         "narHash": "sha256-qXOqiaxJfYOxQgRqdEdK0ddItKfzPFVSZyINij0C8+g=",
@@ -12,6 +12,22 @@
       "original": {
         "owner": "nixos",
         "ref": "87f7f76",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "R452": {
+      "locked": {
+        "lastModified": 1774679983,
+        "narHash": "sha256-x7TZKCMEzNEsq3yqGL2HH1idlpaqiFd2yzOTw74GREA=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "9bce37898d6cd2061784e62e2a188cbb16220c4b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "9bce378",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -66,7 +82,8 @@
     },
     "root": {
       "inputs": {
-        "R433nixpkgs": "R433nixpkgs",
+        "R433": "R433",
+        "R452": "R452",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "repl": "repl"
