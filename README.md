@@ -110,3 +110,9 @@ if [ -e $NIX_LINK ]; then
   export XDG_DATA_DIRS="/usr/local/share/:/usr/share/:$NIX_LINK/share"
 fi
 ```
+
+Add to `/etc/nix/nix.conf` to let my `~/.config/nix/nix.conf` set certain options, like substituters (aka binary caches)
+
+```
+extra-trusted-users = conner
+```
