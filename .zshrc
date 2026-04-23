@@ -1,5 +1,3 @@
-# secrets go in ~/.zshenv, which is .gitignored
-
 export EDITOR=nvim
 export LANG=en_US.UTF-8
 export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive # https://nixos.wiki/wiki/Locales
@@ -124,16 +122,7 @@ preexec() { echo -ne '\e[6 q' ;} # Use beam shape cursor for each new prompt.
 # Plugins
 ############################################
 
-# uv tool puts stuff here
-# TODO: find a way to get it on the path ONCE without disagreeing with the logic below
-#[ -e $HOME/.local/bin ] && export PATH="$HOME/.local/bin:$PATH"
-
-if [ $(echo $PATH | cut -d : -f 1) != ~/.nix-profile/bin ] && [ -e ~/.nix-profile/etc/profile.d/nix.sh ]
-then
-  . ~/.nix-profile/etc/profile.d/nix.sh
-fi
-
-if [ $(echo $PATH | cut -d : -f 1) = ~/.nix-profile/bin ]
+if [ -e ~/.nix-profile/share ]
 then
   fpath+=~/.nix-profile/share/zsh/site-functions
   . ~/.nix-profile/share/fzf/completion.zsh

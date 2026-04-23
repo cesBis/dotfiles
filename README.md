@@ -74,6 +74,9 @@ export BROWSER=wslview
 export PYTHONSTARTUP=$HOME/.pyrc
 # Default WSL Path has a bunch of stuff from windows that slows down tab autocomplete
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+# uv tool puts stuff here, and it's not alone. I plan to prefer `nix profile install`, but might wanna toss this in at some point
+#[ -e $HOME/.local/bin ] && export PATH="$HOME/.local/bin:$PATH"
 ```
 
 Secrets should go in `.zshenv`
