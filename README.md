@@ -12,6 +12,9 @@ As of now, I spend most of my time developing in WSL, so some of these notes are
 
 https://learn.microsoft.com/en-us/windows/wsl/wsl-config
 
+TODO: when rebuilding wsl with debian trixie circa 4/20, I didn't have to touch this file at all. Network just worked and `systemd = true` was already there.
+Haven't installed docker or podman yet though, and I think the final command addressed a podman warning.
+
 ```
 [network]
 generateResolvConf = false
@@ -23,14 +26,6 @@ command = mount --make-rshared /
 ```
 
 See also [`wsl --manage <distro> --set-sparse true`](https://devblogs.microsoft.com/commandline/windows-subsystem-for-linux-september-2023-update/) command.
-
-### Unified Windows and WSL clipboard
-
-Use `win32yank` from windows neovim installation.
-
-```
-ln -s /mnt/c/Users/Conner.Smith/programs/nvim-win64/bin/win32yank.exe /usr/local/bin/win32yank.exe
-```
 
 ### `.Renviron`
 
@@ -69,14 +64,16 @@ gh auth setup-git
 
 ### Extra Environment Variables
 
-Not secret, can go in `.zshrc`
+Environment variables I don't want in the git managed `.zshrc` because they aren't applicable to codespaces, or because they're secret.
+
+Put these in `.profile`
 
 ```
 export BROWSER=wslview
 # unlike .Rprofile and .zshrc, python doesn't have a startup script by default, but this gives it one
 export PYTHONSTARTUP=$HOME/.pyrc
 # Default WSL Path has a bunch of stuff from windows that slows down tab autocomplete
-export PATH=/home/conner/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/wsl/lib
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ```
 
 Secrets should go in `.zshenv`
