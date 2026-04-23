@@ -38,9 +38,37 @@
       ];
     };
 
-    apps.x86_64-linux.air = { type = "app"; program = "${self.pkgs.air-formatter}/bin/air"; };
-    apps.x86_64-linux.R433 = { type = "app"; program = "${inputs.R433.legacyPackages.x86_64-linux.R}/bin/R"; };
-    apps.x86_64-linux.R452 = { type = "app"; program = "${inputs.R452.legacyPackages.x86_64-linux.R}/bin/R"; };
+    devShells.x86_64-linux.R452 = let
+      rpkgs = inputs.R452.legacyPackages.x86_64-linux;
+      rdeps = self.mkRDeps rpkgs;
+    in self.pkgs.mkShell {
+      name = "R 4.5.2";
+      packages = [ rpkgs.R self.pkgs.air-formatter self.pkgs.pandoc ];
+      nativeBuildInputs = rdeps.nativeBuildInputs;
+      buildInputs = rdeps.buildInputs;
+      LD_LIBRARY_PATH = rdeps.LD_LIBRARY_PATH;
+    };
+
+    devShells.x86_64-linux.R433 = let
+      rpkgs = inputs.R433.legacyPackages.x86_64-linux;
+      rdeps = self.mkRDeps rpkgs;
+    in self.pkgs.mkShell {
+      name = "R 4.3.3";
+      packages = [ rpkgs.R self.pkgs.air-formatter self.pkgs.pandoc ];
+      nativeBuildInputs = rdeps.nativeBuildInputs;
+      buildInputs = rdeps.buildInputs;
+      LD_LIBRARY_PATH = rdeps.LD_LIBRARY_PATH;
+    };
+
+    mkRDeps = rpkgs: let
+      # https://nixos.org/manual/nixpkgs/stable/#ssec-stdenv-dependencies-overview
+      nativeBuildInputs = with rpkgs; [ pkg-config cmake ];
+      buildInputs = with rpkgs; [ icu zlib curl openssl fontconfig harfbuzz fribidi freetype libpng libjpeg libtiff libxml2 cairo ];
+      # so that renv can find the .so files in /nix/store
+      LD_LIBRARY_PATH = self.pkgs.lib.makeLibraryPath buildInputs;
+    in {
+      inherit nativeBuildInputs buildInputs LD_LIBRARY_PATH;
+    };
 
     neovim = self.pkgs.wrapNeovimUnstable self.pkgs.neovim-unwrapped (
       self.pkgs.neovimUtils.makeNeovimConfig {
