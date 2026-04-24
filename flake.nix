@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     repl = { url = "github:pappasam/nvim-repl"; flake = false; };
     # https://history.nix-packages.com/ or github:jamesbrink/nxv
     R433.url = "github:nixos/nixpkgs/87f7f76";
