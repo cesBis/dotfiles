@@ -38,15 +38,29 @@
       ];
     };
 
-    devShells.x86_64-linux.R452 = let
+    packages.x86_64-linux.R = let
       rpkgs = inputs.R452.legacyPackages.x86_64-linux;
       rdeps = self.mkRDeps rpkgs;
-    in self.pkgs.mkShell {
-      name = "R 4.5.2";
-      packages = [ rpkgs.R self.pkgs.air-formatter self.pkgs.pandoc ];
-      nativeBuildInputs = rdeps.nativeBuildInputs;
-      buildInputs = rdeps.buildInputs;
-      LD_LIBRARY_PATH = rdeps.LD_LIBRARY_PATH;
+      base = self.pkgs.buildEnv {
+        name = "R 4.5.2";
+        paths = [ rpkgs.R self.pkgs.air-formatter rpkgs.rPackages.renv ];
+      };
+    in self.pkgs.symlinkJoin {
+      name = "R 4.5.2 wrapped";
+      paths = [ base ];
+      nativeBuildInputs = [ self.pkgs.makeWrapper ];
+      postBuild = ''
+        wrapProgram $out/bin/R \
+          --prefix PATH : ${self.pkgs.lib.makeBinPath rdeps.nativeBuildInputs} \
+          --set LD_LIBRARY_PATH "${rdeps.LD_LIBRARY_PATH}" \
+          --run 'export R_LIBS_SITE="$HOME/.nix-profile/library''${R_LIBS_SITE:+:$R_LIBS_SITE}"' \
+          --run 'export R_LIBS_USER="$HOME/.local/lib/R"'
+        wrapProgram $out/bin/Rscript \
+          --prefix PATH : ${self.pkgs.lib.makeBinPath rdeps.nativeBuildInputs} \
+          --set LD_LIBRARY_PATH "${rdeps.LD_LIBRARY_PATH}" \
+          --run 'export R_LIBS_SITE="$HOME/.nix-profile/library''${R_LIBS_SITE:+:$R_LIBS_SITE}"' \
+          --run 'export R_LIBS_USER="$HOME/.local/lib/R"'
+      '';
     };
 
     devShells.x86_64-linux.R433 = let
@@ -62,8 +76,9 @@
 
     mkRDeps = rpkgs: let
       # https://nixos.org/manual/nixpkgs/stable/#ssec-stdenv-dependencies-overview
+      # TODO: consider explicit compiler tools (gcc, gfortran, make) for source package installs. maybe also pandoc?
       nativeBuildInputs = with rpkgs; [ pkg-config cmake ];
-      buildInputs = with rpkgs; [ icu zlib curl openssl fontconfig harfbuzz fribidi freetype libpng libjpeg libtiff libxml2 cairo ];
+      buildInputs = with rpkgs; [ icu zlib curl openssl fontconfig harfbuzz fribidi freetype libpng libjpeg libtiff libxml2 cairo libuv ];
       # so that renv can find the .so files in /nix/store
       LD_LIBRARY_PATH = self.pkgs.lib.makeLibraryPath buildInputs;
     in {
