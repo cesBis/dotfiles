@@ -13,8 +13,8 @@
     pkgs = import inputs.nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
     young-pkgs = import inputs.nixpkgs-unstable { system = "x86_64-linux"; config.allowUnfree = true; };
 
-    packages.x86_64-linux.default = self.pkgs.buildEnv {
-      name = "devtools";
+    packages.x86_64-linux.devtools = self.pkgs.buildEnv {
+      name  = "devtools";
       paths = with self.pkgs; [
         # https://search.nixos.org/packages
         zsh zsh-autosuggestions zsh-syntax-highlighting
