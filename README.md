@@ -107,7 +107,7 @@ When installed with apt, put this in `~/.profile`.
 NIX_LINK="$HOME/.nix-profile"
 if [ -e $NIX_LINK ]; then
   export PATH="$NIX_LINK/bin:$PATH"
-  export XDG_DATA_DIRS="/usr/local/share/:/usr/share/:$NIX_LINK/share"
+  export XDG_DATA_DIRS="$HOME/.local/share:$NIX_LINK/share:/usr/local/share:/usr/share"
 fi
 ```
 
