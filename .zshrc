@@ -62,9 +62,7 @@ _comp_options+=(globdots)
 HISTFILE=~/.zsh_history
 HISTSIZE=31000
 SAVEHIST=30000
-setopt share_history hist_ignore_dups
-
-setopt autocd extendedglob
+setopt share_history hist_ignore_dups autocd
 unsetopt BEEP
 
 autoload -Uz colors && colors
