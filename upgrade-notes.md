@@ -51,13 +51,13 @@ nix eval --raw "github:nixos/nixpkgs/nixos-26.05#vimPlugins.blink-cmp.version"
 - bat
   - 25.11 version: 0.26.1
   - 26.05 version: 0.26.1
-- fzf
+- [fzf](https://github.com/junegunn/fzf/releases)
   - 25.11 version: 0.67.0
   - 26.05 version: 0.72.0
 - jq
   - 25.11 version: 1.8.1
   - 26.05 version: 1.8.1
-- neovim
+- [neovim](https://github.com/neovim/neovim/releases)
   - 25.11 version: 0.11.7
   - 26.05 version: 0.12.3
 
@@ -71,7 +71,7 @@ nix eval --raw "github:nixos/nixpkgs/nixos-26.05#vimPlugins.blink-cmp.version"
 - lualine-nvim
   - 25.11 version: scm-1
   - 26.05 version: scm-4
-- vim-fugitive
+- [vim-fugitive](https://github.com/tpope/vim-fugitive)
   - 25.11 version: 2025-07-15
   - 26.05 version: 3.7 (2026-03-07)
 - vim-rhubarb
@@ -80,18 +80,25 @@ nix eval --raw "github:nixos/nixpkgs/nixos-26.05#vimPlugins.blink-cmp.version"
 - vim-commentary
   - 25.11 version: 2024-10-22
   - 26.05 version: 1.3 (2024-10-22)
-- blink-cmp
+- [blink-cmp](https://github.com/saghen/blink.cmp/releases)
   - 25.11 version: 1.8.0
   - 26.05 version: 1.10.2
+  - [Notice that upcoming v2 may be disruptive](https://github.com/saghen/blink.cmp/blob/main/UPGRADE.md)
 - blink-copilot
   - 25.11 version: 2025-10-29
   - 26.05 version: 1.4.1 (2025-10-29)
-- nvim-lspconfig
+- [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig/releases)
   - 25.11 version: 2025-11-20
   - 26.05 version: 2.9.0
-| ccc-nvim | 2025-05-06 | 2.0.3 (2025-05-06) | **versioned release** |
-| oil-nvim | 2.15.0 | 2.15.0 | same |
-| outline-nvim | 2025-09-07 | 1.2.0 (2026-03-29) | **versioned release** |
+- ccc-nvim
+  - 25.11 version: 2025-05-06
+  - 26.05 version: 2.0.3
+- oil-nvim
+  - 25.11 version: 2.15.0
+  - 26.05 version: 2.15.0
+- [outline-nvim](https://github.com/hedyhli/outline.nvim)
+  - 25.11 version: 2025-09-07
+  - 26.05 version: 1.2.0
 
 Notable: `nvim-lspconfig` jumps to `2.9.0` — this version introduced breaking API changes
 (handlers, `on_attach`, default capabilities). Review `:h lspconfig-changelog` after upgrade.
