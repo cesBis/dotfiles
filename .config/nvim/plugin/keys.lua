@@ -48,8 +48,8 @@ keyset('n', '<leader>Fg', ':FzfGrepInGitFiles ')
 keyset("n", "<leader>e", "<cmd>Oil<cr>")
 
 -- opencode --------------------------
-keyset('n', '<leader>b', function() require("opencode").toggle() end)
-keyset('x', '<leader>bp', function() require("opencode").ask("@this: ", { submit = true }) end)
+vim.keymap.set({ "n", "x" }, "<leader>b", function() require("opencode").select() end,       { desc = "Select OpenCode…" })
+vim.keymap.set({ "n", "x" }, "<leader>bp", function() require("opencode").ask("@this: ") end, { desc = "Ask OpenCode…" })
 
 -- outline --------------------------
 keyset('n', '<leader>o', ':Outline<cr>')
