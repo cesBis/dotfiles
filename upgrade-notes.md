@@ -36,31 +36,59 @@ nix eval --raw "github:nixos/nixpkgs/nixos-26.05#vimPlugins.blink-cmp.version"
 
 ## Core devtools package changes
 
-| Package | 25.11 | 26.05 | Changed? |
-|---------|-------|-------|----------|
-| zsh | 5.9 | 5.9.1 | patch bump |
-| zsh-autosuggestions | 0.7.1 | 0.7.1 | same |
-| zsh-syntax-highlighting | 0.8.0 | 0.8.0 | same |
-| tmux | 3.6a | 3.6a | same |
-| bat | 0.26.1 | 0.26.1 | same |
-| fzf | 0.67.0 | 0.72.0 | **minor bump** |
-| jq | 1.8.1 | 1.8.1 | same |
-| neovim | 0.11.7 | 0.12.3 | **minor bump** |
+- zsh
+  - 25.11 version: 5.9
+  - 26.05 version: 5.9.1
+- zsh-autosuggestions
+  - 25.11 version: 0.7.1
+  - 26.05 version: 0.7.1
+- zsh-syntax-highlighting
+  - 25.11 version: 0.8.0
+  - 26.05 version: 0.8.0
+- tmux
+  - 25.11 version: 3.6a
+  - 26.05 version: 3.6a
+- bat
+  - 25.11 version: 0.26.1
+  - 26.05 version: 0.26.1
+- fzf
+  - 25.11 version: 0.67.0
+  - 26.05 version: 0.72.0
+- jq
+  - 25.11 version: 1.8.1
+  - 26.05 version: 1.8.1
+- neovim
+  - 25.11 version: 0.11.7
+  - 26.05 version: 0.12.3
 
 ---
 
 ## Neovim plugin changes
 
-| Plugin | 25.11 | 26.05 | Notes |
-|--------|-------|-------|-------|
-| nvim-web-devicons | 0.100-1 | 0.100-1 | same |
-| lualine-nvim | scm-1 | scm-4 | upstream commits |
-| vim-fugitive | 2025-07-15 | 3.7 (2026-03-07) | **versioned release** |
-| vim-rhubarb | 2025-06-27 | 0-unstable-2025-06-27 | same content |
-| vim-commentary | 2024-10-22 | 1.3 (2024-10-22) | **versioned release** |
-| blink-cmp | 1.8.0 | 1.10.2 | **minor bump** |
-| blink-copilot | 2025-10-29 | 1.4.1 (2025-10-29) | **versioned release** |
-| nvim-lspconfig | 2025-11-20 | 2.9.0 | **versioned release** |
+- nvim-web-devicons
+  - 25.11 version: 0.100-1
+  - 26.05 version: 0.100-1
+- lualine-nvim
+  - 25.11 version: scm-1
+  - 26.05 version: scm-4
+- vim-fugitive
+  - 25.11 version: 2025-07-15
+  - 26.05 version: 3.7 (2026-03-07)
+- vim-rhubarb
+  - 25.11 version: 2025-06-27
+  - 26.05 version: 0-unstable-2025-06-27
+- vim-commentary
+  - 25.11 version: 2024-10-22
+  - 26.05 version: 1.3 (2024-10-22)
+- blink-cmp
+  - 25.11 version: 1.8.0
+  - 26.05 version: 1.10.2
+- blink-copilot
+  - 25.11 version: 2025-10-29
+  - 26.05 version: 1.4.1 (2025-10-29)
+- nvim-lspconfig
+  - 25.11 version: 2025-11-20
+  - 26.05 version: 2.9.0
 | ccc-nvim | 2025-05-06 | 2.0.3 (2025-05-06) | **versioned release** |
 | oil-nvim | 2.15.0 | 2.15.0 | same |
 | outline-nvim | 2025-09-07 | 1.2.0 (2026-03-29) | **versioned release** |
