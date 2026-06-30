@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     repl = { url = "github:pappasam/nvim-repl"; flake = false; };
     # https://history.nix-packages.com/ or github:jamesbrink/nxv
@@ -85,8 +85,9 @@
       inherit nativeBuildInputs buildInputs LD_LIBRARY_PATH;
     };
 
-    neovim = self.pkgs.wrapNeovimUnstable self.pkgs.neovim-unwrapped (
-      self.pkgs.neovimUtils.makeNeovimConfig {
+    neovim = self.pkgs.wrapNeovimUnstable self.pkgs.neovim-unwrapped {
+    # general guidance on setting up neovim with nix https://github.com/NixOS/nixpkgs/blob/nixos-26.05/doc/languages-frameworks/neovim.section.md
+    # wrapNeovimUnstable is https://github.com/NixOS/nixpkgs/blob/nixos-26.05/pkgs/applications/editors/neovim/wrapper.nix
         plugins = with self.pkgs.vimPlugins; [
           nvim-web-devicons # used by lualine and oil
           lualine-nvim
@@ -100,14 +101,8 @@
           (self.rollVimPkg inputs.repl "repl")
           self.young-pkgs.vimPlugins.opencode-nvim
         ];
-        withNodeJs = false;
-        withPython3 = false;
-        extraPython3Packages = (_: [ ]);
-        withRuby = false;
-        extraLuaPackages = (_: [ ]);
         wrapRc = false;
-      }
-    );
+    };
 
     rollVimPkg = src: pname: self.pkgs.vimUtils.buildVimPlugin { inherit pname src; version = src.lastModifiedDate; };
 
