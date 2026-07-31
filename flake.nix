@@ -53,11 +53,13 @@
         wrapProgram $out/bin/R \
           --prefix PATH : ${self.pkgs.lib.makeBinPath rdeps.nativeBuildInputs} \
           --set LD_LIBRARY_PATH "${rdeps.LD_LIBRARY_PATH}" \
+          --set-default PAGER "${self.pkgs.bat}/bin/bat" \
           --run 'export R_LIBS_SITE="$HOME/.nix-profile/library''${R_LIBS_SITE:+:$R_LIBS_SITE}"' \
           --run 'export R_LIBS_USER="$HOME/.local/lib/R"'
         wrapProgram $out/bin/Rscript \
           --prefix PATH : ${self.pkgs.lib.makeBinPath rdeps.nativeBuildInputs} \
           --set LD_LIBRARY_PATH "${rdeps.LD_LIBRARY_PATH}" \
+          --set-default PAGER "${self.pkgs.bat}/bin/bat" \
           --run 'export R_LIBS_SITE="$HOME/.nix-profile/library''${R_LIBS_SITE:+:$R_LIBS_SITE}"' \
           --run 'export R_LIBS_USER="$HOME/.local/lib/R"'
       '';
