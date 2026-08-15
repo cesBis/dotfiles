@@ -104,6 +104,8 @@
           self.young-pkgs.vimPlugins.opencode-nvim
         ];
         wrapRc = false;
+        # set to true when the machine has a gui
+        waylandSupport = false;
     };
 
     rollVimPkg = src: pname: self.pkgs.vimUtils.buildVimPlugin { inherit pname src; version = src.lastModifiedDate; };
