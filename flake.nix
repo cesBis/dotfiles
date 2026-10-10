@@ -94,7 +94,6 @@
           nvim-web-devicons # used by lualine and oil
           lualine-nvim
           vim-fugitive vim-rhubarb
-          vim-commentary
           blink-cmp blink-copilot
           nvim-lspconfig
           ccc-nvim

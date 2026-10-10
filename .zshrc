@@ -39,8 +39,6 @@ alias gss='git status --short'
 alias gsb='git status --short --branch'
 alias gsw='git switch'
 alias gswc='git switch --create'
-alias gswd='git switch $(git_develop_branch)'
-alias gswm='git switch $(git_main_branch)'
 
 ############################################
 # Completions
@@ -85,7 +83,6 @@ zstyle ':vcs_info:git:*' formats       '%F{45}[%b]%f'
 zstyle ':vcs_info:git:*' actionformats '%F{45}[%b:%a]%f'
 # ignore dotfile repos, see https://unix.stackexchange.com/a/563964
 zstyle ':vcs_info:git:*:conner' formats "%0.0r"
-zstyle ':vcs_info:git:*:.devbox' formats "%0.0r"
 PROMPT='%F{39}[%~]%f${vcs_info_msg_0_}%F{13}>%f '
 
 # https://github.com/ChristianChiarulli/Machfiles/blob/4bd368358eb9a4ace2bc99daf52548925f9507e3/zsh/.config/zsh/zsh-vim-mode
