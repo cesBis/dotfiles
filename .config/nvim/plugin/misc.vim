@@ -1,6 +1,7 @@
 set splitright splitbelow number relativenumber nowrap ignorecase smartcase clipboard=unnamedplus termguicolors timeoutlen=450
 
 colorscheme quiet
+highlight Normal guibg=NONE ctermbg=NONE
 highlight diffAdded   guifg=#00ff33
 highlight diffRemoved guifg=#ff0033
 autocmd ColorSchemePre * highlight clear
