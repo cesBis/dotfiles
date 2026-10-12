@@ -53,12 +53,20 @@
         wrapProgram $out/bin/R \
           --prefix PATH : ${self.pkgs.lib.makeBinPath rdeps.nativeBuildInputs} \
           --set LD_LIBRARY_PATH "${rdeps.LD_LIBRARY_PATH}" \
+          --set LOCALE_ARCHIVE "${self.pkgs.glibcLocales}/lib/locale/locale-archive" \
+          --set-default LANG "en_US.UTF-8" \
+          --set-default TZ "America/Indiana/Indianapolis" \
+          --set RENV_CONFIG_SYSREQS_CHECK FALSE \
           --set-default PAGER "${self.pkgs.bat}/bin/bat" \
           --run 'export R_LIBS_SITE="$HOME/.nix-profile/library''${R_LIBS_SITE:+:$R_LIBS_SITE}"' \
           --run 'export R_LIBS_USER="$HOME/.local/lib/R"'
         wrapProgram $out/bin/Rscript \
           --prefix PATH : ${self.pkgs.lib.makeBinPath rdeps.nativeBuildInputs} \
           --set LD_LIBRARY_PATH "${rdeps.LD_LIBRARY_PATH}" \
+          --set LOCALE_ARCHIVE "${self.pkgs.glibcLocales}/lib/locale/locale-archive" \
+          --set-default LANG "en_US.UTF-8" \
+          --set-default TZ "America/Indiana/Indianapolis" \
+          --set RENV_CONFIG_SYSREQS_CHECK FALSE \
           --set-default PAGER "${self.pkgs.bat}/bin/bat" \
           --run 'export R_LIBS_SITE="$HOME/.nix-profile/library''${R_LIBS_SITE:+:$R_LIBS_SITE}"' \
           --run 'export R_LIBS_USER="$HOME/.local/lib/R"'
@@ -79,7 +87,7 @@
     mkRDeps = rpkgs: let
       # https://nixos.org/manual/nixpkgs/stable/#ssec-stdenv-dependencies-overview
       # TODO: consider explicit compiler tools (gcc, gfortran, make) for source package installs. maybe also pandoc?
-      nativeBuildInputs = with rpkgs; [ pkg-config cmake ];
+      nativeBuildInputs = with rpkgs; [ pkg-config cmake gnumake ];
       buildInputs = with rpkgs; [ icu zlib curl openssl fontconfig harfbuzz fribidi freetype libpng libjpeg libtiff libxml2 cairo libuv ];
       # so that renv can find the .so files in /nix/store
       LD_LIBRARY_PATH = self.pkgs.lib.makeLibraryPath buildInputs;

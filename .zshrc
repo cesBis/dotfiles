@@ -1,6 +1,4 @@
 export EDITOR=nvim
-export LANG=en_US.UTF-8
-export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive # https://nixos.wiki/wiki/Locales
 
 alias ls='ls --group-directories-first'
 alias lv='ls -hlsA --group-directories-first'

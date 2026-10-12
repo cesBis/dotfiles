@@ -4,6 +4,19 @@
 Also maintain a far less fancy `windows` branch.
 Used to maintain a `wsl` branch as well, but let that go in favor of documenting its quirks in this README.
 
+## ~Debian machine defaults
+
+Set the system locale and timezone once per machine.
+
+```sh
+sudo apt install locales
+sudo locale-gen en_US.UTF-8
+sudo update-locale LANG=en_US.UTF-8
+sudo timedatectl set-timezone America/Indiana/Indianapolis
+```
+
+Log out and back in for the locale change to reach user sessions.
+
 ## WSL
 
 As of now, I spend most of my time developing in WSL, so some of these notes are less about WSL and more about comforts for my pet.
