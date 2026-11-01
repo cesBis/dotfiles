@@ -1,7 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     repl = { url = "github:pappasam/nvim-repl"; flake = false; };
     # https://history.nix-packages.com/ or github:jamesbrink/nxv
     R433.url = "github:nixos/nixpkgs/87f7f76";
@@ -11,7 +10,6 @@
   outputs = inputs @ { self, ... }: {
 
     pkgs = import inputs.nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
-    young-pkgs = import inputs.nixpkgs-unstable { system = "x86_64-linux"; config.allowUnfree = true; };
 
     packages.x86_64-linux.devtools = self.pkgs.buildEnv {
       name  = "devtools";
@@ -20,7 +18,7 @@
         zsh zsh-autosuggestions zsh-syntax-highlighting
         tmux bat fzf jq
         self.neovim
-        self.young-pkgs.opencode
+        opencode
       ];
     };
 
@@ -108,7 +106,7 @@
           oil-nvim
           outline-nvim
           (self.rollVimPkg inputs.repl "repl")
-          self.young-pkgs.vimPlugins.opencode-nvim
+          opencode-nvim
         ];
         wrapRc = false;
         # set to true when the machine has a gui
