@@ -63,6 +63,8 @@ Put these in `.profile`
 export BROWSER=explorer.exe
 # unlike .Rprofile and .zshrc, python doesn't have a startup script by default, but this gives it one
 export PYTHONSTARTUP=$HOME/.pyrc
+# make python use .inputrc, like R and bash, for vi keys
+export PYTHON_BASIC_REPL=1
 # uv tool puts stuff here, and it's not alone. I plan to prefer `nix profile install`, but might wanna toss this in at some point
 #[ -e $HOME/.local/bin ] && export PATH="$HOME/.local/bin:$PATH"
 ```

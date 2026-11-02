@@ -48,28 +48,11 @@
         "type": "github"
       }
     },
-    "repl": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1746409926,
-        "narHash": "sha256-S19JUbE9mX93lbh5Co/Vd196kk+APR6zheIaHq6WdMU=",
-        "owner": "pappasam",
-        "repo": "nvim-repl",
-        "rev": "b2dc92607fd6d1833b9c2bd916eeedcb04cad7de",
-        "type": "github"
-      },
-      "original": {
-        "owner": "pappasam",
-        "repo": "nvim-repl",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "R433": "R433",
         "R452": "R452",
-        "nixpkgs": "nixpkgs",
-        "repl": "repl"
+        "nixpkgs": "nixpkgs"
       }
     }
   },

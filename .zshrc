@@ -1,4 +1,5 @@
 export EDITOR=nvim
+export PYTHON_BASIC_REPL=1
 
 alias ls='ls --group-directories-first'
 alias lv='ls -hlsA --group-directories-first'

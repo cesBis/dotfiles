@@ -4,11 +4,7 @@ require('outline').setup()
 
 require("ccc").setup { highlighter = { auto_enable = true } }
 
--- https://github.com/pappasam/nvim-repl
-require("repl").setup {
-  default = { cmd = "zsh" },
-  open_window_default = "new",
-}
+require("slime_tmux").setup()
 
 require("oil").setup {
   default_file_explorer = false, -- true breaks :GBrowse

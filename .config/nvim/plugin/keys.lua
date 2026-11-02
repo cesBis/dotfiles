@@ -30,10 +30,9 @@ keyset('n','<leader>uw', '<cmd>set nowrap<cr>')
 -- Plugin Related Keys
 -------------------------------------
 
--- nvim-repl ------------------------
-keyset('n', '<S-TAB>', '<cmd>ReplToggle<cr>')
-keyset('n', '<TAB>', '<Plug>(ReplSendLine)')
-keyset('x', '<TAB>', '<Plug>(ReplSendVisual)')
+-- vim-slime ------------------------
+keyset('n', '<TAB>', function() require('slime_tmux').send_line() end)
+keyset('x', '<TAB>', ":<C-u>lua require('slime_tmux').send_selection()<cr>", { silent = true })
 -- exit terminal with Ctrl+q
 keyset('t', '<C-q>', '<C-\\><C-n>')
 -- wrap R expression (TODO: see about a lua function that would handle python and R)
@@ -48,8 +47,7 @@ keyset('n', '<leader>Fg', ':FzfGrepInGitFiles ')
 keyset("n", "<leader>e", "<cmd>Oil<cr>")
 
 -- opencode --------------------------
-vim.keymap.set({ "n", "x" }, "<leader>b", function() require("opencode").select() end,       { desc = "Select OpenCode…" })
-vim.keymap.set({ "n", "x" }, "<leader>bp", function() require("opencode").ask("@this: ") end, { desc = "Ask OpenCode…" })
+keyset('n', '<leader>b', function() require('opencode_context').send() end)
 
 -- outline --------------------------
 keyset('n', '<leader>o', ':Outline<cr>')
