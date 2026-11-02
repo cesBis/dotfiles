@@ -62,10 +62,9 @@ SAVEHIST=30000
 setopt share_history hist_ignore_dups autocd
 unsetopt BEEP
 
-autoload -Uz colors && colors
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    alias ls='ls --group-directories-first --color=auto'
     alias grep='grep --color=auto'
 fi
 
@@ -77,7 +76,6 @@ fi
 autoload -Uz add-zsh-hook vcs_info
 setopt prompt_subst
 add-zsh-hook precmd vcs_info
-zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:git:*' formats       '%F{45}[%b]%f'
 zstyle ':vcs_info:git:*' actionformats '%F{45}[%b:%a]%f'
 # ignore dotfile repos, see https://unix.stackexchange.com/a/563964

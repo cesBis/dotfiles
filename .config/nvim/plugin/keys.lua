@@ -33,8 +33,6 @@ keyset('n','<leader>uw', '<cmd>set nowrap<cr>')
 -- vim-slime ------------------------
 keyset('n', '<TAB>', function() require('slime_tmux').send_line() end)
 keyset('x', '<TAB>', ":<C-u>lua require('slime_tmux').send_selection()<cr>", { silent = true })
--- exit terminal with Ctrl+q
-keyset('t', '<C-q>', '<C-\\><C-n>')
 -- wrap R expression (TODO: see about a lua function that would handle python and R)
 keyset('x', 'E', '$%')
 
