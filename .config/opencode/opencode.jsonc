@@ -1,0 +1,16 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "providers": {
+    "github-copilot": {
+      "models": {
+        // this fixes `Error: thinking.adaptive.block_binding: Extra inputs are not permitted`
+        // Codespaces authenticate OpenCode's Copilot provider with GITHUB_TOKEN (instead of gh-cli oauth)
+        // a path that drops the anthropic-beta needed by thinking.block_binding
+        // possibly an opencode bug, and thus possible cruft once we take an opencode update past v2.2.1 (the version where i noticed this behavior)
+        "claude-fable-5.1": { "compatibility": { "supportsThinkingBlockBinding": false } },
+        "claude-opus-5.5": { "compatibility": { "supportsThinkingBlockBinding": false } },
+        "claude-sonnet-5.5": { "compatibility": { "supportsThinkingBlockBinding": false } }
+      }
+    }
+  }
+}
