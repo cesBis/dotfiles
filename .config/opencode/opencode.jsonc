@@ -12,5 +12,20 @@
         "claude-sonnet-5.5": { "compatibility": { "supportsThinkingBlockBinding": false } }
       }
     }
+  },
+  "mcp": {
+    "servers": {
+      "workiq": {
+        "type": "remote",
+        "url": "https://workiq.svc.cloud.microsoft/mcp",
+        "oauth": {
+          "client_id": "ba081686-5d24-4bc6-a0d6-d034ecffed87",
+          "callback_port": 12798,
+          "redirect_uri": "http://localhost:12798/",
+          "scope": "fdcc1f02-fc51-4226-8753-f668596af7f7/WorkIQAgent.Ask",
+          "auth_server_metadata_url": "https://login.microsoftonline.com/milliman.com/v2.0/.well-known/openid-configuration"
+        }
+      }
+    }
   }
 }
