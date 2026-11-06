@@ -35,13 +35,6 @@
       ];
     };
 
-    packages.x86_64-linux.py = self.pkgs.buildEnv {
-      name = "python tools";
-      paths = with self.pkgs; [
-        uv ruff
-      ];
-    };
-
     packages.x86_64-linux.R = let
       rpkgs = inputs.R452.legacyPackages.x86_64-linux;
       rdeps = self.mkRDeps rpkgs;
