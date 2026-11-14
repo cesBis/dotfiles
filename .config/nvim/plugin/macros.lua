@@ -22,9 +22,6 @@ macro("Glog",
   {}
 )
 
--- :Repl from nvim-repl
-macro("Z", "Repl zsh", {})
-
 -- fzf -------------------------------
 macro("EditAndSearch",
   function(opts)

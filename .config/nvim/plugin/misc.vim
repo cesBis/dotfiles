@@ -1,5 +1,11 @@
 set splitright splitbelow number relativenumber nowrap ignorecase smartcase clipboard=unnamedplus termguicolors timeoutlen=450
 
+set autoread
+augroup external_file_changes
+  autocmd!
+  autocmd FocusGained,BufEnter,CursorHold * if mode() ==# 'n' && getcmdwintype() ==# '' | checktime | endif
+augroup END
+
 colorscheme quiet
 highlight Normal guibg=NONE ctermbg=NONE
 highlight diffAdded   guifg=#00ff33

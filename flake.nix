@@ -1,8 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    repl = { url = "github:pappasam/nvim-repl"; flake = false; };
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     # https://history.nix-packages.com/ or github:jamesbrink/nxv
     R433.url = "github:nixos/nixpkgs/87f7f76";
     R452.url = "github:nixos/nixpkgs/9bce378";
@@ -11,7 +9,6 @@
   outputs = inputs @ { self, ... }: {
 
     pkgs = import inputs.nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
-    young-pkgs = import inputs.nixpkgs-unstable { system = "x86_64-linux"; config.allowUnfree = true; };
 
     packages.x86_64-linux.devtools = self.pkgs.buildEnv {
       name  = "devtools";
@@ -19,22 +16,22 @@
         # https://search.nixos.org/packages
         zsh zsh-autosuggestions zsh-syntax-highlighting
         tmux bat fzf jq
+        self.packages.x86_64-linux.tmux-workspace
         self.neovim
-        self.young-pkgs.opencode
+        opencode
       ];
+    };
+
+    packages.x86_64-linux.tmux-workspace = self.pkgs.writeShellApplication {
+      name = "tmux-workspace";
+      runtimeInputs = [ self.pkgs.tmux self.neovim self.pkgs.zsh self.pkgs.opencode ];
+      text = builtins.readFile ./nix/tmux-workspace.sh;
     };
 
     packages.x86_64-linux.github-copilot = self.pkgs.buildEnv {
       name = "github copilot integration";
       paths = with self.pkgs; [
         copilot-language-server github-copilot-cli
-      ];
-    };
-
-    packages.x86_64-linux.py = self.pkgs.buildEnv {
-      name = "python tools";
-      paths = with self.pkgs; [
-        uv ruff
       ];
     };
 
@@ -53,12 +50,20 @@
         wrapProgram $out/bin/R \
           --prefix PATH : ${self.pkgs.lib.makeBinPath rdeps.nativeBuildInputs} \
           --set LD_LIBRARY_PATH "${rdeps.LD_LIBRARY_PATH}" \
+          --set LOCALE_ARCHIVE "${self.pkgs.glibcLocales}/lib/locale/locale-archive" \
+          --set-default LANG "en_US.UTF-8" \
+          --set-default TZ "America/Indiana/Indianapolis" \
+          --set RENV_CONFIG_SYSREQS_CHECK FALSE \
           --set-default PAGER "${self.pkgs.bat}/bin/bat" \
           --run 'export R_LIBS_SITE="$HOME/.nix-profile/library''${R_LIBS_SITE:+:$R_LIBS_SITE}"' \
           --run 'export R_LIBS_USER="$HOME/.local/lib/R"'
         wrapProgram $out/bin/Rscript \
           --prefix PATH : ${self.pkgs.lib.makeBinPath rdeps.nativeBuildInputs} \
           --set LD_LIBRARY_PATH "${rdeps.LD_LIBRARY_PATH}" \
+          --set LOCALE_ARCHIVE "${self.pkgs.glibcLocales}/lib/locale/locale-archive" \
+          --set-default LANG "en_US.UTF-8" \
+          --set-default TZ "America/Indiana/Indianapolis" \
+          --set RENV_CONFIG_SYSREQS_CHECK FALSE \
           --set-default PAGER "${self.pkgs.bat}/bin/bat" \
           --run 'export R_LIBS_SITE="$HOME/.nix-profile/library''${R_LIBS_SITE:+:$R_LIBS_SITE}"' \
           --run 'export R_LIBS_USER="$HOME/.local/lib/R"'
@@ -79,7 +84,7 @@
     mkRDeps = rpkgs: let
       # https://nixos.org/manual/nixpkgs/stable/#ssec-stdenv-dependencies-overview
       # TODO: consider explicit compiler tools (gcc, gfortran, make) for source package installs. maybe also pandoc?
-      nativeBuildInputs = with rpkgs; [ pkg-config cmake ];
+      nativeBuildInputs = with rpkgs; [ pkg-config cmake gnumake ];
       buildInputs = with rpkgs; [ icu zlib curl openssl fontconfig harfbuzz fribidi freetype libpng libjpeg libtiff libxml2 cairo libuv ];
       # so that renv can find the .so files in /nix/store
       LD_LIBRARY_PATH = self.pkgs.lib.makeLibraryPath buildInputs;
@@ -99,15 +104,12 @@
           ccc-nvim
           oil-nvim
           outline-nvim
-          (self.rollVimPkg inputs.repl "repl")
-          self.young-pkgs.vimPlugins.opencode-nvim
+          vim-slime
         ];
         wrapRc = false;
         # set to true when the machine has a gui
         waylandSupport = false;
     };
-
-    rollVimPkg = src: pname: self.pkgs.vimUtils.buildVimPlugin { inherit pname src; version = src.lastModifiedDate; };
 
   };
 }

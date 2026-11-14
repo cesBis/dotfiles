@@ -4,28 +4,28 @@
 Also maintain a far less fancy `windows` branch.
 Used to maintain a `wsl` branch as well, but let that go in favor of documenting its quirks in this README.
 
+## ~Debian machine defaults
+
+Set the system locale and timezone once per machine.
+
+```sh
+sudo apt install locales
+sudo locale-gen en_US.UTF-8
+sudo update-locale LANG=en_US.UTF-8
+sudo timedatectl set-timezone America/Indiana/Indianapolis
+```
+
+Log out and back in for the locale change to reach user sessions.
+
 ## WSL
-
-As of now, I spend most of my time developing in WSL, so some of these notes are less about WSL and more about comforts for my pet.
-
-### `/etc/wsl.conf`
 
 https://learn.microsoft.com/en-us/windows/wsl/wsl-config
 
-TODO: when rebuilding wsl with debian trixie circa 4/20, I didn't have to touch this file at all. Network just worked and `systemd = true` was already there.
-Haven't installed docker or podman yet though, and I think the final command addressed a podman warning.
-
-```
-[network]
-generateResolvConf = false
-generateHosts = false
-
-[boot]
-systemd = true
-command = mount --make-rshared /
-```
-
 See also [`wsl --manage <distro> --set-sparse true`](https://devblogs.microsoft.com/commandline/windows-subsystem-for-linux-september-2023-update/) command.
+
+## R
+
+probably outdated, but kept for reference
 
 ### `.Renviron`
 
@@ -53,28 +53,18 @@ if (R.version$version.string == "R version 4.3.3 (2024-02-29)") {
 }
 ```
 
-### `.gitconfig`
-
-Use the github cli for authentication to GitHub.
-
-```
-gh auth login
-gh auth setup-git
-```
-
-### Extra Environment Variables
+## Extra Environment Variables
 
 Environment variables I don't want in the git managed `.zshrc` because they aren't applicable to codespaces, or because they're secret.
 
 Put these in `.profile`
 
 ```
-export BROWSER=wslview
+export BROWSER=explorer.exe
 # unlike .Rprofile and .zshrc, python doesn't have a startup script by default, but this gives it one
 export PYTHONSTARTUP=$HOME/.pyrc
-# Default WSL Path has a bunch of stuff from windows that slows down tab autocomplete
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-
+# make python use .inputrc, like R and bash, for vi keys
+export PYTHON_BASIC_REPL=1
 # uv tool puts stuff here, and it's not alone. I plan to prefer `nix profile install`, but might wanna toss this in at some point
 #[ -e $HOME/.local/bin ] && export PATH="$HOME/.local/bin:$PATH"
 ```
@@ -111,8 +101,11 @@ if [ -e $NIX_LINK ]; then
 fi
 ```
 
-Add to `/etc/nix/nix.conf` to let my `~/.config/nix/nix.conf` set certain options, like substituters (aka binary caches)
+These may be good additions to `/etc/nix/nix.conf` on a pet
 
 ```
+# let myself add things like binary cache substitutors
 extra-trusted-users = conner
+# get `sudo nix ...` to behave like i expect
+experimental-features = nix-command flakes
 ```
