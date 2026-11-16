@@ -76,11 +76,12 @@ fi
 autoload -Uz add-zsh-hook vcs_info
 setopt prompt_subst
 add-zsh-hook precmd vcs_info
-zstyle ':vcs_info:git:*' formats       '%F{45}[%b]%f'
-zstyle ':vcs_info:git:*' actionformats '%F{45}[%b:%a]%f'
+zstyle ':vcs_info:git:*' formats       '%F{45}%b%f'
+zstyle ':vcs_info:git:*' actionformats '%F{45}%b:%a%f'
 # ignore dotfile repos, see https://unix.stackexchange.com/a/563964
 zstyle ':vcs_info:git:*:conner' formats "%0.0r"
-PROMPT='%F{39}[%~]%f${vcs_info_msg_0_}%F{13}>%f '
+PROMPT='%F{39}|%~|%f${vcs_info_msg_0_}
+%F{13}|>%f '
 
 # https://github.com/ChristianChiarulli/Machfiles/blob/4bd368358eb9a4ace2bc99daf52548925f9507e3/zsh/.config/zsh/zsh-vim-mode
 
