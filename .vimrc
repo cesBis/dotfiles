@@ -22,5 +22,5 @@ nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 nmap <leader>l <cmd>nohl<cr><cmd>echo<cr>
 
-set rtp+=~/programs/fzf
+" the fzf plugin is cloned to ~/.vim/pack/dev/start/fzf by setup.ps1
 nmap <leader>f <cmd>FZF<cr>
